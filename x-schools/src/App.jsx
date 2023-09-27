@@ -1,22 +1,23 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import NavBar from "./ui/NavBar"
-import About from "./pages/About"
-import Contact from "./pages/Contact"
-import Css from "./pages/CSS"
-import JavaScript from "./pages/JavaScript"
-import React from "./pages/React"
-import Python from "./pages/Python"
-import Csharp from "./pages/C#"
-import Home from "./pages/Home"
-import Sql from "./pages/SQL"
-import SignIn from "./pages/SignIn"
-import SignUp from "./pages/SignUp"
+// import { BrowserRouter, Routes, Route } from "react-router-dom"
+// import NavBar from "./ui/NavBar"
+// import About from "./pages/About"
+// import Contact from "./pages/Contact"
+// import Css from "./pages/CSS"
+// import JavaScript from "./pages/JavaScript"
+// import React from "./pages/React"
+// import Python from "./pages/Python"
+// import Csharp from "./pages/Csharp"
+// import Home from "./pages/Home"
+// import Sql from "./pages/SQL"
+// import SignIn from "./pages/SignIn"
+// import SignUp from "./pages/SignUp"
+import CodeSpace from "./ui/CodeSpace"
 
 
-export default function App(){
-  return(
+export default function App() {
+  return (
     <div>
-    <BrowserRouter>
+      {/* <BrowserRouter>
     <Routes>
       <Route index element={<Home />} />
       <Route  path='/home' element={<Home />}/>
@@ -26,12 +27,24 @@ export default function App(){
       <Route  path='/javascript' element={<JavaScript/>}/>
       <Route  path='/react' element={<React/>}/>
       <Route  path='/python' element={<Python/>}/>
-      <Route  path='/c#' element={<Csharp/>}/>
+      <Route  path='/csharp' element={<Csharp/>}/>
       <Route  path='/sql' element={<Sql/>}/>
       <Route  path='/sign-in' element={<SignIn/>}/>
       <Route  path='/sign-up' element={<SignUp/>}/>
     </Routes>
-    </BrowserRouter>
-  </div>
+    </BrowserRouter> */}
+      <CodeSpace enterCode={`using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Hello World!");    
+    }
+  }
+}`} />
+    </div>
   )
 }
