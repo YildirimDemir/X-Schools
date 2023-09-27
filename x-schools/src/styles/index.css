@@ -1,0 +1,18 @@
+:root{
+    --navbar-footer-bg-color: #30343F;
+    --body-bg-color: #FAFAFF;
+    --pink: #E4D9FF;
+    --button-blue: #273469;
+    --dark-blue: #1E2749;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: auto;
+}
