@@ -33,7 +33,13 @@ export default function App() {
       <Route  path='/sign-up' element={<SignUp/>}/>
     </Routes>
     </BrowserRouter> */}
-      <CodeSpace enterCode={`using System;
+
+      <CodeSpace
+        title={"C#"}
+        lang={"text/x-csharp"}
+        readOnly={true}
+        lineNumbers={true}
+        enterCode={`using System;
 
 namespace HelloWorld
 {
@@ -45,6 +51,74 @@ namespace HelloWorld
     }
   }
 }`} />
+
+      <CodeSpace
+        title={"CSS"}
+        lang={"css"}
+        readOnly={true}
+        lineNumbers={true}
+        enterCode={`body {
+  background-color: lightblue;
+}`} />
+
+      <CodeSpace
+        title={"JavaScript"}
+        lang={"javascript"}
+        readOnly={true}
+        lineNumbers={true}
+        enterCode={`// Function to compute the product of p1 and p2
+function myFunction(p1, p2) {
+  return p1 * p2;
+}`} />
+
+      <CodeSpace
+        title={"Python"}
+        lang={"text/x-python"}
+        readOnly={true}
+        lineNumbers={true}
+        enterCode={`x = 4       # x is of type int
+x = "Sally" # x is now of type str
+print(x)`} />
+
+      <CodeSpace
+        title={"React/JSX"}
+        lang={"jsx"}
+        readOnly={true}
+        lineNumbers={true}
+        enterCode={`import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}
+      >Blue</button>
+    </>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);`} />
+
+      <CodeSpace
+        title={"SQL"}
+        lang={"text/x-sql"}
+        readOnly={true}
+        lineNumbers={true}
+        enterCode={`CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);`} />
+
+
     </div>
   )
 }
