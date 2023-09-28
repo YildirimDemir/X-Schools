@@ -1,3 +1,4 @@
+// npm i codemirror@version5
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import 'codemirror/lib/codemirror.css';
