@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import NavBar from "./ui/NavBar"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
@@ -7,14 +7,14 @@ import JavaScript from "./pages/JavaScript"
 import React from "./pages/React"
 import Python from "./pages/Python"
 import Csharp from "./pages/Csharp"
+import Csharp from "./pages/Csharp"
 import Home from "./pages/Home"
 import Sql from "./pages/SQL"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 
-
-export default function App(){
-  return(
+export default function App() {
+  return (
     <div>
     <BrowserRouter>
     <NavBar />
