@@ -4,6 +4,7 @@
     --pink: #E4D9FF;
     --button-blue: #273469;
     --dark-blue: #1E2749;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 *{
@@ -16,3 +17,118 @@ body{
     width: 100%;
     height: auto;
 }
+
+nav{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--navbar-footer-bg-color);
+}
+
+nav .nav-logo{
+    width: 220px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo img{
+    width: 100%;
+    height: 100%;
+}
+
+nav .nav-content{
+    display: flex;
+}
+
+.nav-tutorials{
+    position: relative;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nav-tutorials a{
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    margin: 10px 0px;
+    padding: 5px 10px;
+}
+
+.nav-tutorials .nav-dropdown{
+    top: 67px;
+    height: auto;
+    width: 250px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--dark-blue);
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-dropdown a{
+    padding: 5px 10px;
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.nav-dropdown a:hover{
+    background: var(--button-blue);
+}
+
+
+.nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item .nav-link{
+    margin: 0px 2px;
+}
+.nav-item .nav-user{
+    margin: 0px 2px;
+}
+
+.nav-link a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 1.1rem;
+    font-family: var(--font-family)
+}
+
+.nav-user a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0px 5px;
+    font-size: 1.1rem;
+    font-family: var(--font-family)
+}
+
+
+
+.resp-open{
+    right: 20px;
+    position: absolute;
+    display: none;
+}
+
+.resp-open span{
+    font-size: 3rem;
+    font-family: var(--font-family);
+    color: #fff;
+}
+

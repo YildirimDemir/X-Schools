@@ -1,5 +1,5 @@
 export default function React(){
     return(
-        <h1>React</h1>
+        <h1>Hello World</h1>
     )
 }
