@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import NavBar from "./ui/NavBar"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Css from "./pages/CSS"
@@ -10,7 +11,6 @@ import Home from "./pages/Home"
 import Sql from "./pages/SQL"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
-import NavBar from "./ui/NavBar"
 
 
 export default function App(){
@@ -32,6 +32,7 @@ export default function App(){
       <Route  path='/sign-in' element={<SignIn/>}/>
       <Route  path='/sign-up' element={<SignUp/>}/>
     </Routes>
+    <Footer/>
     </BrowserRouter>
   </div>
   )
