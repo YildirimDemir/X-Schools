@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
@@ -16,7 +16,7 @@ export default function NavBar() {
   const openNav = () => {
     setIsNavOpen(!isNavOpen)
   }
-  
+
 
   return (
     <>
@@ -27,25 +27,25 @@ export default function NavBar() {
           </Link>
         </div>
         <div className={isNavOpen ? "nav-content" : "nav-content open"}>
-        <div className="nav-tutorials">
-          <Link
-           className="tutorials-dropdown"
-           onClick={toggleDropdown}
-           >
-            Tutorials
-          </Link>
-          {isDropdownOpen && <Dropdown toNewPage={toNewPage}/>}
-        </div>
-        <div className="nav-item">
-          <div className="nav-link">
-            <Link to="/about" onClick={toNewPage}>About</Link>
-            <Link to="/contact" onClick={toNewPage}>Contact</Link>
+          <div className="nav-tutorials">
+            <Link
+              className="tutorials-dropdown"
+              onClick={toggleDropdown}
+            >
+              Tutorials
+            </Link>
+            {isDropdownOpen && <Dropdown toNewPage={toNewPage} />}
           </div>
-          <div className="nav-user">
+          <div className="nav-item">
+            <div className="nav-link">
+              <Link to="/about" onClick={toNewPage}>About</Link>
+              <Link to="/contact" onClick={toNewPage}>Contact</Link>
+            </div>
+            <div className="nav-user">
               <Link to="/sign-in" onClick={toNewPage}>Sign In</Link>
               <Link to="/sign-up" onClick={toNewPage}>Sign Up</Link>
+            </div>
           </div>
-        </div>
         </div>
         <div className="resp-open">
           <span onClick={openNav}>
@@ -57,7 +57,7 @@ export default function NavBar() {
   );
 }
 
-function Dropdown({toNewPage}) {
+function Dropdown({ toNewPage }) {
   return (
     <div className="nav-dropdown">
       <Link to="/css" onClick={toNewPage}>CSS</Link>
