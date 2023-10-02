@@ -19,9 +19,9 @@ export default function JavaScript() {
                 lang={"javascript"}
                 readOnly={true}
                 lineNumbers={true}
-                codeWrapColor="yellow"
+                codeWrapColor="gray"
                 codeWrapBorderColor="black"
-                titleColor="black"
+                titleColor="white"
                 codeAreaColor="black"
                 enterCode={`// Function to compute the product of p1 and p2
 function myFunction(p1, p2) {

@@ -18,9 +18,9 @@ export default function Css() {
                 lang={"css"}
                 readOnly={true}
                 lineNumbers={true}
-                codeWrapColor="cyan"
+                codeWrapColor="gray"
                 codeWrapBorderColor="black"
-                titleColor="black"
+                titleColor="cyan"
                 codeAreaColor="black"
                 enterCode={`body {
           background-color: lightblue;

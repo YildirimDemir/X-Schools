@@ -182,6 +182,7 @@ nav .nav-content {
 .codeWrap {
     background-color: var(--dark-blue);
     width: 90%;
+    height: auto;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -202,8 +203,9 @@ nav .nav-content {
 
 .codeArea {
     background-color: var(--button-blue);
-    height: 21rem;
+    height: auto;
     width: 95%;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,10 +215,12 @@ nav .nav-content {
 
 .codeSection {
     width: 85%;
+    height: auto;
 }
 
 .CodeMirror {
-    background-color: var(--pink);
+    height: auto;
+    background-color: var(--body-bg-color);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -240,7 +244,7 @@ nav .nav-content {
 .templateContent {
     background-color: var(--button-blue);
     width: 80%;
-    height: 50rem;
+    height: auto;
     border-radius: 30px;
     padding: 3rem;
     border: 5px solid var(--navbar-footer-bg-color);
@@ -250,6 +254,11 @@ nav .nav-content {
 .templateContent h1 {
     color: var(--pink);
     margin-bottom: 1rem;
+}
+
+.templateCodeArea {
+    height: auto;
+    margin-bottom: 2rem;
 }
 
 .codeAbout {

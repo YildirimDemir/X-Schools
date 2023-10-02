@@ -18,7 +18,7 @@ export default function React() {
         lang={"jsx"}
         readOnly={true}
         lineNumbers={true}
-        codeWrapColor="steelblue"
+        codeWrapColor="gray"
         codeWrapBorderColor="white"
         titleColor="white"
         codeAreaColor="white"
