@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-family);
 }
 body{
     width: 100%;
@@ -218,4 +219,24 @@ nav .nav-content{
 
 .CodeMirror-linenumber {
     color: var(--pink);
+}
+
+.note-card {
+    background-color: rgba(255, 241, 110, 0.993);
+    padding: 25px;
+    width: auto;
+}
+
+.note-card h2 {
+    margin-bottom: 10px;
+}
+
+.general-button {
+    filter: brightness(1);
+    transition: all 300ms;
+    box-shadow: none;
+}
+.general-button:hover {
+    filter: brightness(0.85);
+    scale: 1.05;
 }

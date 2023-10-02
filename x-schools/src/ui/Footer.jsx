@@ -7,7 +7,7 @@ export default function Footer() {
 			<UpperBar />
 			<ContentBar />
 			<LowerBar>
-				<span>Company of 2023 - CopyRight by INFINIT-X</span>
+				<span>Company of 2023 - CopyRight by INFINITX</span>
 			</LowerBar>
 		</>
 	)
@@ -49,7 +49,7 @@ function UpperBar() {
 					<h3>X-School</h3>
 				</div>
 				<div>
-					<h3>A Company of Infinit-X</h3>
+					<h3>A Company of InfinitX</h3>
 				</div>
 			</div>
 		</>
