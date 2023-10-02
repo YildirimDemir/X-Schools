@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function TemplatePage({ title, secondTitle, about, code, contentColor, titleColor, secondTitleColor, aboutColor }) {
 
-    TemplatePage.PropTypes = {
+    TemplatePage.propTypes = {
         title: PropTypes.string.isRequired,
         secondTitle: PropTypes.string.isRequired,
         about: PropTypes.string.isRequired,
