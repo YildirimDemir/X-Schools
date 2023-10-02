@@ -8,17 +8,18 @@ import JavaScript from "./pages/JavaScript"
 import React from "./pages/React"
 import Python from "./pages/Python"
 import Csharp from "./pages/Csharp"
-import Csharp from "./pages/Csharp"
 import Home from "./pages/Home"
 import Sql from "./pages/SQL"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
+import Button from "./ui/Button"
 
 export default function App() {
   return (
     <div>
     <BrowserRouter>
     <NavBar />
+    <Button/>
     <Routes>
       <Route index element={<Home />} />
       <Route  path='/home' element={<Home />}/>
