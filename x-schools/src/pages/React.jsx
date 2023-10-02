@@ -4,10 +4,11 @@ import TemplatePage from "../ui/TemplatePage";
 export default function React() {
   return (
     <TemplatePage
-      title="C# Tutorial"
-      secondTitle="Learn C#"
-      about={`C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
-            C# is used to develop web apps, desktop apps, mobile apps, games and much more.`}
+      title="React Tutorial"
+      secondTitle="Learn React"
+      about={`React is a JavaScript library for building user interfaces.
+      React is used to build single-page applications.
+      React allows us to create reusable UI components.`}
       contentColor="steelblue"
       titleColor="white"
       secondTitleColor="white"

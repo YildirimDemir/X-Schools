@@ -4,10 +4,10 @@ import TemplatePage from "../ui/TemplatePage";
 export default function Sql() {
     return (
         <TemplatePage
-            title="C# Tutorial"
-            secondTitle="Learn C#"
-            about={`C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
-            C# is used to develop web apps, desktop apps, mobile apps, games and much more.`}
+            title="SQL Tutorial"
+            secondTitle="Learn SQL"
+            about={`SQL is a standard language for storing, manipulating and retrieving data in databases.
+            Our SQL tutorial will teach you how to use SQL in: MySQL, SQL Server, MS Access, Oracle, Sybase, Informix, Postgres, and other database systems.`}
             contentColor="orangered"
             titleColor="white"
             secondTitleColor="white"
