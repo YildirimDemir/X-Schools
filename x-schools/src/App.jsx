@@ -19,7 +19,6 @@ export default function App() {
     <div>
     <BrowserRouter>
     <NavBar />
-    <Button/>
     <Routes>
       <Route index element={<Home />} />
       <Route  path='/home' element={<Home />}/>
