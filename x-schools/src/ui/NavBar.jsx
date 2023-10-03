@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import navSupabase from "../services/navSupabase";
 
 export default function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const [tutorials, setTutorials] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -16,6 +19,23 @@ export default function NavBar() {
   const openNav = () => {
     setIsNavOpen(!isNavOpen)
   }
+
+
+  useEffect(() => {
+    async function getTutorials() {
+        const  { data, error } = await navSupabase
+        .from('tutorials')
+        .select('*')
+      
+        if(error){
+          console.error(error)
+          throw new Error('Tutorials could not be loaded')
+        }
+      
+         setTutorials(data);
+      }
+      getTutorials();
+  }, [])
   
 
   return (
@@ -26,7 +46,7 @@ export default function NavBar() {
             <img src="/src/img/x-school-logo.png" alt="" />
           </Link>
         </div>
-        <div className={isNavOpen ? "nav-content" : "nav-content open"}>
+        <div className={!isNavOpen ? "nav-content" : "nav-content open"}>
         <div className="nav-tutorials">
           <Link
            className="tutorials-dropdown"
@@ -34,7 +54,7 @@ export default function NavBar() {
            >
             Tutorials
           </Link>
-          {isDropdownOpen && <Dropdown toNewPage={toNewPage}/>}
+          {isDropdownOpen && <Dropdown toNewPage={toNewPage} data={tutorials}/>}
         </div>
         <div className="nav-item">
           <div className="nav-link">
@@ -49,7 +69,7 @@ export default function NavBar() {
         </div>
         <div className="resp-open">
           <span onClick={openNav}>
-            {isNavOpen ? '≡' : 'x'}
+            {!isNavOpen ? '≡' : 'x'}
           </span>
         </div>
       </nav>
@@ -57,15 +77,13 @@ export default function NavBar() {
   );
 }
 
-function Dropdown({toNewPage}) {
+function Dropdown({toNewPage, data}) {
+  
   return (
     <div className="nav-dropdown">
-      <Link to="/css" onClick={toNewPage}>CSS</Link>
-      <Link to="/javascript" onClick={toNewPage}>JavaScript</Link>
-      <Link to="/react" onClick={toNewPage}>React</Link>
-      <Link to="/python" onClick={toNewPage}>Python</Link>
-      <Link to="/csharp" onClick={toNewPage}>C#</Link>
-      <Link to="/sql" onClick={toNewPage}>SQL</Link>
+      {data.map((item) => (
+          <Link to= {`/${item.title}`} onClick={toNewPage} key={item.id} >{item.title}</Link>
+      ))}
     </div>
   );
 }

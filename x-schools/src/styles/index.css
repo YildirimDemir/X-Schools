@@ -219,3 +219,54 @@ nav .nav-content{
 .CodeMirror-linenumber {
     color: var(--pink);
 }
+
+
+/* =====SİDEBAR====== */
+
+.sidebar{
+    width: 200px;
+    min-height: 100vh;
+    left: 0;
+    top: 80px;
+    background: var(--dark-blue);
+    padding: 10px;
+}
+
+.sidebar .sidebar-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    border-bottom: 2px solid var(--pink);
+    transition: .2s;
+}
+.sidebar .sidebar-content:hover{
+    background-color: var(--pink);
+    border-radius: 5px;
+}
+
+.sidebar .sidebar-content:hover a{
+    color: var(--navbar-footer-bg-color);
+}
+
+.sidebar-content a{
+    color: #FAFAFF;
+    font-family: var(--font-family);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px;
+}
+
+
+.page-container {
+    display: flex; /* Use Flexbox */
+  }
+  
+  .page-sidebar {
+    flex: 0 0 200px; /* Make "one" 200px wide and don't allow it to grow or shrink */
+  }
+  
+  .page-content {
+    flex: 1; /* Let "two" take up the remaining space */
+  }
+  

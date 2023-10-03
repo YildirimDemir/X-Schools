@@ -8,11 +8,12 @@ import JavaScript from "./pages/JavaScript"
 import React from "./pages/React"
 import Python from "./pages/Python"
 import Csharp from "./pages/Csharp"
-import Csharp from "./pages/Csharp"
 import Home from "./pages/Home"
 import Sql from "./pages/SQL"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
+import Components from "./components/React-learn/Components"
+
 
 export default function App() {
   return (
@@ -28,10 +29,11 @@ export default function App() {
       <Route  path='/javascript' element={<JavaScript/>}/>
       <Route  path='/react' element={<React/>}/>
       <Route  path='/python' element={<Python/>}/>
-      <Route  path='/csharp' element={<Csharp/>}/>
+      <Route  path='/c' element={<Csharp/>}/>
       <Route  path='/sql' element={<Sql/>}/>
       <Route  path='/sign-in' element={<SignIn/>}/>
       <Route  path='/sign-up' element={<SignUp/>}/>
+      <Route  path='/react/components' element={<Components />}/>
     </Routes>
     <Footer/>
     </BrowserRouter>
