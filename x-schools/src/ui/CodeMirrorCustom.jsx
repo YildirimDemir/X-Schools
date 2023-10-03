@@ -1,5 +1,5 @@
 // npm i codemirror@version5
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/javascript/javascript';
@@ -10,23 +10,26 @@ import 'codemirror/mode/jsx/jsx';
 import 'codemirror/mode/sql/sql';
 import CodeMirror from 'codemirror';
 
-export default function CodeMirrorCustom({ enterCode, lang, readOnly, lineNumbers, title }) {
+export default function CodeMirrorCustom({ enterCode, lang, readOnly, lineNumbers, title, codeWrapColor, codeWrapBorderColor, titleColor, codeAreaColor }) {
 
     CodeMirrorCustom.propTypes = {
         enterCode: PropTypes.string.isRequired,
         lang: PropTypes.string.isRequired,
         readOnly: PropTypes.bool.isRequired,
         lineNumbers: PropTypes.bool.isRequired,
-        title: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired,
+        codeWrapColor: PropTypes.string.isRequired,
+        codeWrapBorderColor: PropTypes.string.isRequired,
+        titleColor: PropTypes.string.isRequired,
+        codeAreaColor: PropTypes.string.isRequired
     };
 
-    const [isInitialRender, setIsInitialRender] = useState(true);
     const editorRef = useRef(null);
 
     useEffect(() => {
-        if (isInitialRender) {
-            setIsInitialRender(false);
-            return;
+
+        if (editorRef.current) {
+            editorRef.current.innerHTML = null;
         }
 
         const editor = CodeMirror(editorRef.current, {
@@ -38,14 +41,14 @@ export default function CodeMirrorCustom({ enterCode, lang, readOnly, lineNumber
         const defaultCode = `${enterCode}`;
         editor.setValue(defaultCode);
 
-    }, [isInitialRender, enterCode, lang, readOnly, lineNumbers]);
+    }, [enterCode, lang, readOnly, lineNumbers]);
 
     return (
         <>
-            <div className='codeWrap'>
-                <h2>{title}</h2>
-                <pre className='codeArea'>
-                    <code className='codeSection'>
+            <div className='codeWrap' style={{ backgroundColor: codeWrapColor, borderColor: codeWrapBorderColor }}>
+                <h2 style={{ color: titleColor }}>{title}</h2>
+                <pre className='codeArea' style={{ backgroundColor: codeAreaColor }}>
+                    <code className='codeSection' >
                         <div ref={editorRef}></div>
                     </code>
                 </pre>

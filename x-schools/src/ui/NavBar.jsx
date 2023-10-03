@@ -64,8 +64,8 @@ export default function NavBar() {
           <div className="nav-user">
               <Link to="/sign-in" onClick={toNewPage}>Sign In</Link>
               <Link to="/sign-up" onClick={toNewPage}>Sign Up</Link>
+            </div>
           </div>
-        </div>
         </div>
         <div className="resp-open">
           <span onClick={openNav}>
