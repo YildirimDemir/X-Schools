@@ -249,6 +249,7 @@ nav .nav-content {
     transition: all 300ms;
     box-shadow: none;
 }
+
 .general-button:hover {
     filter: brightness(0.85);
     scale: 1.05;
@@ -257,7 +258,7 @@ nav .nav-content {
 
 /* =====SİDEBAR====== */
 
-.sidebar{
+.sidebar {
     width: 200px;
     min-height: 100vh;
     left: 0;
@@ -266,7 +267,7 @@ nav .nav-content {
     padding: 10px;
 }
 
-.sidebar .sidebar-content{
+.sidebar .sidebar-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,16 +275,17 @@ nav .nav-content {
     border-bottom: 2px solid var(--pink);
     transition: .2s;
 }
-.sidebar .sidebar-content:hover{
+
+.sidebar .sidebar-content:hover {
     background-color: var(--pink);
     border-radius: 5px;
 }
 
-.sidebar .sidebar-content:hover a{
+.sidebar .sidebar-content:hover a {
     color: var(--navbar-footer-bg-color);
 }
 
-.sidebar-content a{
+.sidebar-content a {
     color: #FAFAFF;
     font-family: var(--font-family);
     text-decoration: none;
@@ -293,20 +295,22 @@ nav .nav-content {
 
 
 .page-container {
-    display: flex; /* Use Flexbox */
-  }
-  
-  .page-sidebar {
-    flex: 0 0 200px; /* Make "one" 200px wide and don't allow it to grow or shrink */
-  }
-  
-  .page-content {
-    flex: 1; /* Let "two" take up the remaining space */
-  }
-  
+    display: flex;
+    /* Use Flexbox */
+}
+
+.page-sidebar {
+    flex: 0 0 200px;
+    /* Make "one" 200px wide and don't allow it to grow or shrink */
+}
+
+.page-content {
+    flex: 1;
+    /* Let "two" take up the remaining space */
+}
+
 
 .templateContainer {
-    background-color: var(--pink);
     width: 100%;
     display: flex;
     justify-content: end;
@@ -315,7 +319,7 @@ nav .nav-content {
 
 .templateContent {
     background-color: var(--button-blue);
-    width: 80%;
+    width: 100%;
     height: auto;
     border-radius: 30px;
     padding: 3rem;
