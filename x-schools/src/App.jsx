@@ -32,6 +32,7 @@ import SQLSyntax from "./components/SQL-learn/Syntax"
 import Union from "./components/SQL-learn/Union"
 import Update from "./components/SQL-learn/Update"
 import Where from "./components/SQL-learn/Where"
+import Profile from "./pages/Profile"
 
 export default function App() {
   return (
@@ -51,6 +52,7 @@ export default function App() {
           <Route path='/sql' element={<SQL />} />
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/c/syntax' element={<Syntax />} />
           <Route path='/c/output' element={<Output />} />
           <Route path='/c/comments' element={<Comments />} />

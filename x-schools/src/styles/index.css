@@ -352,3 +352,94 @@ nav .nav-content {
     color: var(--pink);
     width: 50%;
 }
+
+.profileContainer {
+    width: 100%;
+    height: 50rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profileContent {
+    width: 50%;
+    height: 100%;
+    background-color: var(--dark-blue);
+    border: 5px solid var(--navbar-footer-bg-color);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profileUp {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.profileImg {
+    width: 40%;
+    height: 100%;
+    background-color: var(--pink);
+    border: 5px solid var(--navbar-footer-bg-color);
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.profileInfo {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileInfo h1 {
+    color: var(--pink);
+    font-size: 45px;
+    text-shadow: 0px 0px 5px var(--navbar-footer-bg-color);
+}
+
+.profileDown {
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+:is(.profileUsername, .profileName, .profileSurname, .profileEmail) {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+}
+
+:is(.profileUsername, .profileName, .profileSurname, .profileEmail) label {
+    font-size: 25px;
+    color: var(--pink);
+    margin-right: 1rem;
+    text-shadow: 0px 0px 5px var(--navbar-footer-bg-color);
+}
+
+:is(.profileUsername, .profileName, .profileSurname, .profileEmail) input {
+    font-size: 25px;
+    background-color: var(--pink);
+    border: 5px solid var(--navbar-footer-bg-color);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.profileSave {
+    width: 75%;
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+}
