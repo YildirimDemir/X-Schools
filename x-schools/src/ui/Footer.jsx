@@ -4,17 +4,26 @@ import React from "react";
 export default function Footer() {
 	return (
 		<>
-			<UpperBar />
-			<ContentBar />
-			<LowerBar>
-				<span>Company of 2023 - CopyRight by INFINITX</span>
-			</LowerBar>
+			<div className="content-bg">
+				<UpperBar />
+				<ContentBar />
+				<LowerBar>
+					<span>Company of 2023 - CopyRight by INFINITX</span>
+				</LowerBar>
+			</div>
 		</>
 	)
 }
 
 const footerContent = [
-
+	{
+		title: '',
+		lines: []
+	},
+	{
+		title: '',
+		lines: []
+	},
 	{
 		title: 'Contact',
 		lines: [
@@ -46,10 +55,10 @@ function UpperBar() {
 		<>
 			<div className="upper-bar">
 				<div>
-					<h3>X-School</h3>
+					<h2>XSchool</h2>
 				</div>
 				<div>
-					<h3>A Company of InfinitX</h3>
+					<h2>A Company of InfinitX</h2>
 				</div>
 			</div>
 		</>
