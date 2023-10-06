@@ -23,8 +23,8 @@ export default function Css() {
                 titleColor="cyan"
                 codeAreaColor="black"
                 enterCode={`body {
-          background-color: lightblue;
-        }`} />
+    background-color: lightblue;
+}`} />
             } />
     )
 }

@@ -34,6 +34,7 @@ import Union from "./components/SQL-learn/Union"
 import Update from "./components/SQL-learn/Update"
 import Where from "./components/SQL-learn/Where"
 import Profile from "./pages/Profile"
+import Components from "./components/React-learn/Components"
 import UseMemo from "./components/React-learn/UseMemo"
 import Props from "./components/React-learn/Props"
 import Routers from "./components/React-learn/Routers"
@@ -53,10 +54,7 @@ import Switch from "./components/JS-learn/Switch"
 import Sets from "./components/JS-learn/Sets"
 import JsMaps from "./components/JS-learn/Maps"
 
-
 export default function App() {
-
-  
 
   return (
     <div>
@@ -96,6 +94,7 @@ export default function App() {
           <Route path='/sql/union' element={<Union />} />
           <Route path='/sql/update' element={<Update />} />
           <Route path='/sql/where' element={<Where />} />
+          <Route path='/react/components' element={<Components />} />
           <Route path='/react/useMemo' element={<UseMemo />} />
           <Route path='/react/props' element={<Props />} />
           <Route path='/react/router' element={<Routers />} />
@@ -115,7 +114,7 @@ export default function App() {
           <Route path='/javascript/switch' element={<Switch />} />
           <Route path='/javascript/sets' element={<Sets />} />
           <Route path='/javascript/maps' element={<JsMaps />} />
-    </Routes>
+        </Routes>
         <Footer />
       </BrowserRouter>
     </div>

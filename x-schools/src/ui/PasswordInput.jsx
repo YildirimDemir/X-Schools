@@ -1,11 +1,18 @@
 import { useState } from "react";
-
+import PropTypes from 'prop-types';
 
 export default function PasswordInput({
   placeholder = 'Password',
   content = '🔒',
   valueSet
 }) {
+
+  PasswordInput.propTypes = {
+    placeholder: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    valueSet: PropTypes.func.isRequired
+  }
+
   const [showPass, setShowPass] = useState(false)
 
   const showPassHandler = () => {

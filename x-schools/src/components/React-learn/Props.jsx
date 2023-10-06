@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SideBar from '../../ui/SideBar';
-import reactSupabase from '../../services/reactSupabase';
+import dataSupabase from "../../services/dataSupabase";
 import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
@@ -12,7 +12,7 @@ export default function Props() {
     useEffect(() => {
         async function getReact() {
             try {
-                const { data, error } = await reactSupabase
+                const { data, error } = await dataSupabase
                     .from('react')
                     .select('*');
 
@@ -43,27 +43,27 @@ export default function Props() {
                     <Loader />
                 ) : (
                     newReact.map((item, index) => (
-                        <TemplatePage
-                        title={item.title}
-                        secondTitle="Learn React"
-                        about={`${item.about}`}
-                        contentColor="#273469"
-                        titleColor="white"
-                        secondTitleColor="white"
-                        aboutColor="white"
-                        code={
-                        <CodeSpace
-                        title={"React/JSX Example"}
-                        lang={"jsx"}
-                        readOnly={true}
-                        lineNumbers={true}
-                        codeWrapColor="#30343F"
-                        codeWrapBorderColor="white"
-                        titleColor="white"
-                        codeAreaColor="white"
-                        enterCode={`${item.code}`}
-                        />
-                        }
+                        <TemplatePage key={index}
+                            title={item.title}
+                            secondTitle="Learn React"
+                            about={`${item.about}`}
+                            contentColor="#273469"
+                            titleColor="white"
+                            secondTitleColor="white"
+                            aboutColor="white"
+                            code={
+                                <CodeSpace
+                                    title={"React/JSX Example"}
+                                    lang={"jsx"}
+                                    readOnly={true}
+                                    lineNumbers={true}
+                                    codeWrapColor="#30343F"
+                                    codeWrapBorderColor="white"
+                                    titleColor="white"
+                                    codeAreaColor="white"
+                                    enterCode={`${item.code}`}
+                                />
+                            }
                         />
                     ))
                 )}

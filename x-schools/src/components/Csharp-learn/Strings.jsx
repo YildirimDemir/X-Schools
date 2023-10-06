@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import cSupabase from "../../services/cSupabase";
+import dataSupabase from "../../services/dataSupabase";
 import SideBar from '../../ui/SideBar';
 import TemplatePage from "../../ui/TemplatePage";
 import CodeSpace from "../../ui/CodeSpace";
@@ -10,7 +10,7 @@ export default function Strings() {
 
     useEffect(() => {
         async function getCsharp() {
-            const { data, error } = await cSupabase
+            const { data, error } = await dataSupabase
                 .from('c')
                 .select('*')
 
@@ -33,19 +33,25 @@ export default function Strings() {
             </div>
             <div className='page-content'>
                 {newCsharp.map((item, index) => (
-                    <div key={index}>
-                        <TemplatePage
-                            title={item.title}
-                            secondTitle="Learn Strings"
-                            about={`${item.about}`}
-                            code={<CodeSpace
-                                title={"C# Example"}
-                                lang={"text/x-csharp"}
-                                readOnly={true}
-                                lineNumbers={true}
-                                enterCode={`${item.code}`} />
-                            } />
-                    </div>
+                    <TemplatePage key={index}
+                        title={item.title}
+                        secondTitle="Learn Strings"
+                        about={`${item.about}`}
+                        contentColor="#273469"
+                        titleColor="white"
+                        secondTitleColor="white"
+                        aboutColor="white"
+                        code={<CodeSpace
+                            title={"C# Example"}
+                            lang={"text/x-csharp"}
+                            readOnly={true}
+                            lineNumbers={true}
+                            codeWrapColor="#30343F"
+                            codeWrapBorderColor="white"
+                            titleColor="white"
+                            codeAreaColor="white"
+                            enterCode={`${item.code}`} />
+                        } />
                 ))}
             </div>
         </div>

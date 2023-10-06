@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import sqlSupbase from "../../services/sqlSupabase";
+import dataSupabase from "../../services/dataSupabase";
 import SideBar from '../../ui/SideBar';
 import TemplatePage from "../../ui/TemplatePage";
 import CodeSpace from "../../ui/CodeSpace";
@@ -10,7 +10,7 @@ export default function Between() {
 
     useEffect(() => {
         async function getSQL() {
-            const { data, error } = await sqlSupbase
+            const { data, error } = await dataSupabase
                 .from('sql')
                 .select('*')
 
@@ -33,19 +33,25 @@ export default function Between() {
             </div>
             <div className='page-content'>
                 {newSQL.map((item, index) => (
-                    <div key={index}>
-                        <TemplatePage
-                            title={item.title}
-                            secondTitle="Learn BETWEEN"
-                            about={`${item.about}`}
-                            code={<CodeSpace
-                                title={"SQL Example"}
-                                lang={"text/x-sql"}
-                                readOnly={true}
-                                lineNumbers={true}
-                                enterCode={`${item.code}`} />
-                            } />
-                    </div>
+                    <TemplatePage key={index}
+                        title={item.title}
+                        secondTitle="Learn BETWEEN"
+                        about={`${item.about}`}
+                        contentColor="#273469"
+                        titleColor="white"
+                        secondTitleColor="white"
+                        aboutColor="white"
+                        code={<CodeSpace
+                            title={"SQL Example"}
+                            lang={"text/x-sql"}
+                            readOnly={true}
+                            lineNumbers={true}
+                            codeWrapColor="#30343F"
+                            codeWrapBorderColor="white"
+                            titleColor="white"
+                            codeAreaColor="white"
+                            enterCode={`${item.code}`} />
+                        } />
                 ))}
             </div>
         </div>

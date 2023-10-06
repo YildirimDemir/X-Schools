@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import sqlSupbase from "../services/sqlSupabase";
+import dataSupabase from "../services/dataSupabase";
 import SideBar from '../ui/SideBar';
 
 export default function SQL() {
@@ -8,7 +8,7 @@ export default function SQL() {
 
     useEffect(() => {
         async function getSQL() {
-            const { data, error } = await sqlSupbase
+            const { data, error } = await dataSupabase
                 .from('sql')
                 .select('*')
 

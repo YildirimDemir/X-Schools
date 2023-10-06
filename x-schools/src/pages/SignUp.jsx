@@ -4,7 +4,7 @@ import LScard from "../ui/LScard";
 import PasswordInput from "../ui/PasswordInput";
 import TextInput from "../ui/TextInput";
 import { Link } from "react-router-dom";
-import usersSupabase from "../services/usersSupabase";
+import dataSupabase from "../services/dataSupabase";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
@@ -21,8 +21,8 @@ export default function SignUp() {
 
   useEffect(() => {
     async function getUsers() {
-      const { data, error } = await usersSupabase
-        .from('users')
+      const { data, error } = await dataSupabase
+        .from('c#')
         .select('*')
       if (error) {
         console.error(error)
@@ -33,13 +33,11 @@ export default function SignUp() {
     getUsers();
   }, []);
 
-  console.log(usersData);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     async function handleSignup() {
       if (password === confirmPassword) {
-        const { error } = await usersSupabase
+        const { error } = await dataSupabase
           .from('users')
           .insert([
             {
@@ -55,6 +53,7 @@ export default function SignUp() {
           console.error('Sıgn Up Error:', error);
         } else {
           console.log('User Save:', username);
+          console.log(usersData);
           navigate('/home');
         }
       }
@@ -113,8 +112,8 @@ export default function SignUp() {
               <TextInput content='✉️' placeholder='E-Mail' valueSet={setEmail} />
             </div>
             <div className="ns">
-              <PasswordInput valueSet={setPassword} />
-              <PasswordInput placeholder="Password again" valueSet={setConfirmPassword} />
+              <PasswordInput placeholder="Password" content="🔒" valueSet={setPassword} />
+              <PasswordInput placeholder="Password again" content="🔒" valueSet={setConfirmPassword} />
             </div>
             <div className="checkbox2">
               <input type="checkbox" id="i" />

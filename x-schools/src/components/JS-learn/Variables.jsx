@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SideBar from '../../ui/SideBar';
 import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
-import jsSupabase from '../../services/jsSupabase';
+import dataSupabase from "../../services/dataSupabase";
 
 export default function Variables() {
     const [javascript, setJavascript] = useState([]);
@@ -12,7 +12,7 @@ export default function Variables() {
     useEffect(() => {
         async function getReact() {
             try {
-                const { data, error } = await jsSupabase
+                const { data, error } = await dataSupabase
                     .from('javascript')
                     .select('*');
 
@@ -43,27 +43,27 @@ export default function Variables() {
                     <Loader />
                 ) : (
                     newJavascript.map((item, index) => (
-                        <TemplatePage
-                        title={item.title}
-                        secondTitle="Learn JS"
-                        about={`${item.about}`}
-                        contentColor="#273469"
-                        titleColor="white"
-                        secondTitleColor="white"
-                        aboutColor="white"
-                        code={<CodeSpace
-                        title={"JavaScript"}
-                        lang={"javascript"}
-                        readOnly={true}
-                        lineNumbers={true}
-                        codeWrapColor="#30343F"
-                        codeWrapBorderColor="white"
-                        titleColor="white"
-                        codeAreaColor="white"
-                        enterCode={`${item.code}`} />
-                        } />
-                          ))
-                         )}
+                        <TemplatePage key={index}
+                            title={item.title}
+                            secondTitle="Learn JS"
+                            about={`${item.about}`}
+                            contentColor="#273469"
+                            titleColor="white"
+                            secondTitleColor="white"
+                            aboutColor="white"
+                            code={<CodeSpace
+                                title={"JavaScript"}
+                                lang={"javascript"}
+                                readOnly={true}
+                                lineNumbers={true}
+                                codeWrapColor="#30343F"
+                                codeWrapBorderColor="white"
+                                titleColor="white"
+                                codeAreaColor="white"
+                                enterCode={`${item.code}`} />
+                            } />
+                    ))
+                )}
             </div>
         </div>
     );

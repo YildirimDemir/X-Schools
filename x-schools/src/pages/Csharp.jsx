@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import cSupabase from "../services/cSupabase";
+import dataSupabase from "../services/dataSupabase";
 import SideBar from "../ui/SideBar";
 
 export default function Csharp() {
@@ -8,7 +8,7 @@ export default function Csharp() {
 
   useEffect(() => {
     async function getCsharp() {
-      const { data, error } = await cSupabase
+      const { data, error } = await dataSupabase
         .from('c')
         .select('*')
 
