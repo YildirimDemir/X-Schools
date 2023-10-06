@@ -14,7 +14,7 @@ export default function SQL() {
 
             if (error) {
                 console.error(error)
-                throw new Error('C# contents could not be loaded')
+                throw new Error('SQL contents could not be loaded')
             }
 
             setSQL(data);
@@ -23,6 +23,13 @@ export default function SQL() {
     }, []);
 
     return (
-        <SideBar list={SQL} />
+        <div className='page-container'>
+            <div className='page-sidebar'>
+                <SideBar list={SQL} />
+            </div>
+            <div className='page-content'>
+
+            </div>
+        </div>
     )
 }

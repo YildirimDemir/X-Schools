@@ -3,18 +3,11 @@ import SideBar from "../ui/SideBar";
 import dataSupabase from "../services/dataSupabase";
 
 export default function JavaScript() {
-  // const reactPath = [
-  //     {path: '/react/components', item: 'React Components'},
-  //     {path: '/react/props', item: 'React Props'},
-  //     {path: '/react/router', item: 'React Router'},
-  //     {path: '/react/list', item: 'React List'},
-  //     {path: '/react/query', item: 'React Query'},
-  // ]
 
   const [javascript, setJavascript] = useState([]);
 
   useEffect(() => {
-    async function getReact() {
+    async function getJavascript() {
       const { data, error } = await dataSupabase
         .from('javascript')
         .select('*')
@@ -26,7 +19,7 @@ export default function JavaScript() {
 
       setJavascript(data);
     }
-    getReact();
+    getJavascript();
   }, [])
 
   return (

@@ -3,13 +3,6 @@ import dataSupabase from "../services/dataSupabase";
 import SideBar from "../ui/SideBar";
 
 export default function React() {
-  // const reactPath = [
-  //     {path: '/react/components', item: 'React Components'},
-  //     {path: '/react/props', item: 'React Props'},
-  //     {path: '/react/router', item: 'React Router'},
-  //     {path: '/react/list', item: 'React List'},
-  //     {path: '/react/query', item: 'React Query'},
-  // ]
 
   const [react, setReact] = useState([]);
 

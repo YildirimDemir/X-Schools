@@ -14,7 +14,7 @@ export default function Csharp() {
 
       if (error) {
         console.error(error)
-        throw new Error('React contents could not be loaded')
+        throw new Error('C# contents could not be loaded')
       }
 
       setCsharp(data);
@@ -23,6 +23,13 @@ export default function Csharp() {
   }, []);
 
   return (
-    <SideBar list={csharp} />
+    <div className='page-container'>
+      <div className='page-sidebar'>
+        <SideBar list={csharp} />
+      </div>
+      <div className='page-content'>
+
+      </div>
+    </div>
   )
 }
