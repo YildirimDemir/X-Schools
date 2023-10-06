@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import SideBar from '../../ui/SideBar';
-import reactSupabase from '../../services/reactSupabase';
 import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
+import jsSupabase from '../../services/jsSupabase';
 
-export default function Components() {
-    const [react, setReact] = useState([]);
+export default function Assignment() {
+    const [javascript, setJavascript] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         async function getReact() {
             try {
-                const { data, error } = await reactSupabase
-                    .from('react')
+                const { data, error } = await jsSupabase
+                    .from('javascript')
                     .select('*');
 
                 if (error) {
                     console.error(error);
-                    throw new Error('React contents could not be loaded');
+                    throw new Error('Javascript contents could not be loaded');
                 }
 
-                setReact(data);
+                setJavascript(data);
             } catch (error) {
                 console.error(error);
             } finally {
@@ -31,42 +31,39 @@ export default function Components() {
         getReact();
     }, []);
 
-    const newReact = react.filter((item) => item.title === 'React Components');
+    const newJavascript = javascript.filter((item) => item.title === 'JS Assignment');
 
     return (
         <div className='page-container'>
             <div className='page-sidebar'>
-                <SideBar list={react} />
+                <SideBar list={javascript} />
             </div>
             <div className='page-content'>
                 {isLoading ? (
                     <Loader />
                 ) : (
-                    newReact.map((item, index) => (
+                    newJavascript.map((item, index) => (
                         <TemplatePage
                         title={item.title}
-                        secondTitle="Learn React"
+                        secondTitle="Learn JS"
                         about={`${item.about}`}
                         contentColor="#273469"
                         titleColor="white"
                         secondTitleColor="white"
                         aboutColor="white"
-                        code={
-                        <CodeSpace
-                        title={"React/JSX Example"}
-                        lang={"jsx"}
+                        code={<CodeSpace
+                        title={"JavaScript"}
+                        lang={"javascript"}
                         readOnly={true}
                         lineNumbers={true}
                         codeWrapColor="#30343F"
                         codeWrapBorderColor="white"
                         titleColor="white"
                         codeAreaColor="white"
-                        enterCode={`${item.code}`}
-                        />
-                        }
-                        />
-                    ))
-                )}
+                        enterCode={`${item.code}`} />
+                        } />
+                          ))
+                         )}
             </div>
         </div>
     );

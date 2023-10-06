@@ -5,7 +5,7 @@ import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
 
-export default function Components() {
+export default function UseState() {
     const [react, setReact] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -31,7 +31,7 @@ export default function Components() {
         getReact();
     }, []);
 
-    const newReact = react.filter((item) => item.title === 'React Components');
+    const newReact = react.filter((item) => item.title === 'React useState');
 
     return (
         <div className='page-container'>
