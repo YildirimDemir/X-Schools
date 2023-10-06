@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import cSupabase from "../services/cSupabase";
+import dataSupabase from "../services/dataSupabase";
 import SideBar from "../ui/SideBar";
 
 export default function Csharp() {
@@ -8,13 +8,13 @@ export default function Csharp() {
 
   useEffect(() => {
     async function getCsharp() {
-      const { data, error } = await cSupabase
+      const { data, error } = await dataSupabase
         .from('c')
         .select('*')
 
       if (error) {
         console.error(error)
-        throw new Error('React contents could not be loaded')
+        throw new Error('C# contents could not be loaded')
       }
 
       setCsharp(data);
@@ -23,6 +23,13 @@ export default function Csharp() {
   }, []);
 
   return (
-    <SideBar list={csharp} />
+    <div className='page-container'>
+      <div className='page-sidebar'>
+        <SideBar list={csharp} />
+      </div>
+      <div className='page-content'>
+
+      </div>
+    </div>
   )
 }

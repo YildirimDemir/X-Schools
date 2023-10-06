@@ -1,5 +1,4 @@
-import React from "react";
-
+import PropTypes from 'prop-types';
 
 export default function Footer() {
 	return (
@@ -74,9 +73,9 @@ function ContentBar() {
 						<ContentInner
 							key={index}
 							title={content.title}
-							lines={content.lines.map((line) => {
+							lines={content.lines.map((line, index) => {
 								return (
-									<li style={{ margin: '5px 0' }}>
+									<li key={index} style={{ margin: '5px 0' }}>
 										<a href="">{line}</a>
 									</li>
 								)
@@ -89,7 +88,12 @@ function ContentBar() {
 	)
 }
 
-function LowerBar({children}) {
+function LowerBar({ children }) {
+
+	LowerBar.propTypes = {
+		children: PropTypes.object.isRequired,
+	}
+
 	return (
 		<div className="lower-bar">
 			{children}
@@ -101,6 +105,12 @@ function ContentInner({
 	title,
 	lines,
 }) {
+
+	ContentInner.propTypes = {
+		title: PropTypes.string.isRequired,
+		lines: PropTypes.array.isRequired
+	}
+
 	return (
 		<div>
 			<h2>{title}</h2>

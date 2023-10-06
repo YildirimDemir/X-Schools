@@ -1,30 +1,34 @@
-import CodeSpace from "../ui/CodeSpace";
-import TemplatePage from "../ui/TemplatePage";
+import { useEffect, useState } from "react";
+import dataSupabase from "../services/dataSupabase";
+import SideBar from "../ui/SideBar";
 
 export default function Css() {
+    const [css, setCss] = useState([]);
+
+    useEffect(() => {
+        async function getReact() {
+            const { data, error } = await dataSupabase
+                .from('css')
+                .select('*')
+
+            if (error) {
+                console.error(error)
+                throw new Error('CSS contents could not be loaded')
+            }
+
+            setCss(data);
+        }
+        getReact();
+    }, [])
+
     return (
-        <TemplatePage
-            title="CSS Tutorial"
-            secondTitle="Learn CSS"
-            about={`CSS is the language we use to style an HTML document.
-            CSS describes how HTML elements should be displayed.
-            This tutorial will teach you CSS from basic to advanced.`}
-            contentColor="cyan"
-            titleColor="black"
-            secondTitleColor="black"
-            aboutColor="black"
-            code={<CodeSpace
-                title={"CSS Example"}
-                lang={"css"}
-                readOnly={true}
-                lineNumbers={true}
-                codeWrapColor="gray"
-                codeWrapBorderColor="black"
-                titleColor="cyan"
-                codeAreaColor="black"
-                enterCode={`body {
-          background-color: lightblue;
-        }`} />
-            } />
+        <div className='page-container'>
+            <div className='page-sidebar'>
+                <SideBar list={css} />
+            </div>
+            <div className='page-content'>
+
+            </div>
+        </div>
     )
 }

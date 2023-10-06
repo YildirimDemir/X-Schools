@@ -1,28 +1,12 @@
-import { useEffect, useState } from "react";
-import sqlSupbase from "../../services/sqlSupabase";
 import SideBar from '../../ui/SideBar';
 import TemplatePage from "../../ui/TemplatePage";
 import CodeSpace from "../../ui/CodeSpace";
+import SQLData from "../../Data/SQLData";
+import Loader from '../../ui/Loader';
 
 export default function Between() {
 
-    const [SQL, setSQL] = useState([]);
-
-    useEffect(() => {
-        async function getSQL() {
-            const { data, error } = await sqlSupbase
-                .from('sql')
-                .select('*')
-
-            if (error) {
-                console.error(error)
-                throw new Error('SQL contents could not be loaded')
-            }
-
-            setSQL(data);
-        }
-        getSQL();
-    }, []);
+    const { SQL, isLoading } = SQLData();
 
     const newSQL = SQL.filter((item) => item.title === 'SQL BETWEEN');
 
@@ -32,21 +16,27 @@ export default function Between() {
                 <SideBar list={SQL} />
             </div>
             <div className='page-content'>
-                {newSQL.map((item, index) => (
-                    <div key={index}>
-                        <TemplatePage
-                            title={item.title}
-                            secondTitle="Learn BETWEEN"
-                            about={`${item.about}`}
-                            code={<CodeSpace
-                                title={"SQL Example"}
-                                lang={"text/x-sql"}
-                                readOnly={true}
-                                lineNumbers={true}
-                                enterCode={`${item.code}`} />
-                            } />
-                    </div>
-                ))}
+                {isLoading ? (<Loader />) : (newSQL.map((item, index) => (
+                    <TemplatePage key={index}
+                        title={item.title}
+                        secondTitle="Learn BETWEEN"
+                        about={`${item.about}`}
+                        contentColor="#273469"
+                        titleColor="white"
+                        secondTitleColor="white"
+                        aboutColor="white"
+                        code={<CodeSpace
+                            title={"SQL Example"}
+                            lang={"text/x-sql"}
+                            readOnly={true}
+                            lineNumbers={true}
+                            codeWrapColor="#30343F"
+                            codeWrapBorderColor="white"
+                            titleColor="white"
+                            codeAreaColor="white"
+                            enterCode={`${item.code}`} />
+                        } />
+                )))}
             </div>
         </div>
     )
