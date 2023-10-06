@@ -3,14 +3,6 @@ import pythonSupabase from "../services/pythonSupabase";
 import SideBar from "../ui/SideBar";
 
 export default function Python(){
-    // const reactPath = [
-    //     {path: '/react/components', item: 'React Components'},
-    //     {path: '/react/props', item: 'React Props'},
-    //     {path: '/react/router', item: 'React Router'},
-    //     {path: '/react/list', item: 'React List'},
-    //     {path: '/react/query', item: 'React Query'},
-    // ]
-
     const [python, setPython] = useState([]);
 
     useEffect(() => {
@@ -29,7 +21,13 @@ export default function Python(){
           getPython();
       }, [])
 
-    return(
-        <SideBar list={python}/>
+      return(
+        <div className='page-container'>
+         <div className='page-sidebar'>
+           <SideBar list={python}/>
+         </div>
+         <div className='page-content'>   
+         </div>
+        </div>
     )
   }

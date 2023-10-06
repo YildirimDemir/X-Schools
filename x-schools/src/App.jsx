@@ -12,13 +12,13 @@ import Home from "./pages/Home"
 import SQL from "./pages/SQL"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
-import Syntax from "./components/Csharp-learn/Syntax"
-import Output from "./components/Csharp-learn/Output"
-import Comments from "./components/Csharp-learn/Comments"
-import Arrays from "./components/Csharp-learn/Arrays"
-import Booleans from "./components/Csharp-learn/Booleans"
-import Data from "./components/Csharp-learn/Data"
-import Operators from "./components/Csharp-learn/Operators"
+import CSharpSyntax from "./components/Csharp-learn/Syntax"
+import CSharpOutput from "./components/Csharp-learn/Output"
+import CSharpComments from "./components/Csharp-learn/Comments"
+import CSharpArrays from "./components/Csharp-learn/Arrays"
+import CSharpBooleans from "./components/Csharp-learn/Booleans"
+import CSharpData from "./components/Csharp-learn/Data"
+import CSharpOperators from "./components/Csharp-learn/Operators"
 import CSharpStrings from "./components/Csharp-learn/Strings"
 import CSharpSwitch from "./components/Csharp-learn/Switch"
 import CSharpVariables from "./components/Csharp-learn/Variables"
@@ -52,6 +52,7 @@ import JsIfElse from "./components/JS-learn/JsIfElse"
 import Switch from "./components/JS-learn/Switch"
 import Sets from "./components/JS-learn/Sets"
 import JsMaps from "./components/JS-learn/Maps"
+import Comments from "./components/Python-learn/Comments"
 
 
 export default function App() {
@@ -73,16 +74,16 @@ export default function App() {
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/c/syntax' element={<Syntax />} />
-          <Route path='/c/output' element={<Output />} />
-          <Route path='/c/comments' element={<Comments />} />
+          <Route path='/c/syntax' element={<CSharpSyntax />} />
+          <Route path='/c/output' element={<CSharpOutput />} />
+          <Route path='/c/comments' element={<CSharpComments />} />
           <Route path='/c/variables' element={<CSharpVariables />} />
-          <Route path='/c/data' element={<Data />} />
-          <Route path='/c/operators' element={<Operators />} />
+          <Route path='/c/data' element={<CSharpData />} />
+          <Route path='/c/operators' element={<CSharpOperators />} />
           <Route path='/c/strings' element={<CSharpStrings />} />
-          <Route path='/c/booleans' element={<Booleans />} />
+          <Route path='/c/booleans' element={<CSharpBooleans />} />
           <Route path='/c/swith' element={<CSharpSwitch />} />
-          <Route path='/c/arrays' element={<Arrays />} />
+          <Route path='/c/arrays' element={<CSharpArrays />} />
           <Route path='/sql/and' element={<And />} />
           <Route path='/sql/between' element={<Between />} />
           <Route path='/sql/delete' element={<Delete />} />
@@ -112,6 +113,7 @@ export default function App() {
           <Route path='/javascript/switch' element={<Switch />} />
           <Route path='/javascript/sets' element={<Sets />} />
           <Route path='/javascript/maps' element={<JsMaps />} />
+          <Route path='/python/comments' element={<Comments />} />
     </Routes>
         <Footer />
       </BrowserRouter>
