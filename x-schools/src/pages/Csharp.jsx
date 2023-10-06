@@ -1,37 +1,28 @@
-import CodeSpace from "../ui/CodeSpace";
-import TemplatePage from "../ui/TemplatePage";
+import { useEffect, useState } from "react";
+import cSupabase from "../services/cSupabase";
+import SideBar from "../ui/SideBar";
 
 export default function Csharp() {
-  return (
-    <TemplatePage
-      title="C# Tutorial"
-      secondTitle="Learn C#"
-      about={`C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
-            C# is used to develop web apps, desktop apps, mobile apps, games and much more.`}
-      contentColor="pink"
-      titleColor="darkblue"
-      secondTitleColor="darkblue"
-      aboutColor="darkblue"
-      code={<CodeSpace
-        title="C# Example"
-        lang="text/x-csharp"
-        readOnly={true}
-        lineNumbers={true}
-        codeWrapColor="purple"
-        codeWrapBorderColor="darkblue"
-        titleColor="pink"
-        codeAreaColor="darkblue"
-        enterCode={`using System;
 
-namespace HelloWorld
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      Console.WriteLine("Hello World!");    
+  const [csharp, setCsharp] = useState([]);
+
+  useEffect(() => {
+    async function getCsharp() {
+      const { data, error } = await cSupabase
+        .from('c')
+        .select('*')
+
+      if (error) {
+        console.error(error)
+        throw new Error('React contents could not be loaded')
+      }
+
+      setCsharp(data);
     }
-  }
-}`} />} />
+    getCsharp();
+  }, []);
+
+  return (
+    <SideBar list={csharp} />
   )
 }

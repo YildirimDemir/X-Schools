@@ -276,6 +276,7 @@ nav .nav-content {
     border-radius: 15px;
     margin: 20px;
 }
+
 .general-button:hover {
     scale: 1.05;
 }
@@ -283,7 +284,7 @@ nav .nav-content {
 
 /* =====SİDEBAR====== */
 
-.sidebar{
+.sidebar {
     width: 200px;
     min-height: 100vh;
     left: 0;
@@ -292,7 +293,7 @@ nav .nav-content {
     padding: 10px;
 }
 
-.sidebar .sidebar-content{
+.sidebar .sidebar-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -300,16 +301,17 @@ nav .nav-content {
     border-bottom: 2px solid var(--pink);
     transition: .2s;
 }
-.sidebar .sidebar-content:hover{
+
+.sidebar .sidebar-content:hover {
     background-color: var(--pink);
     border-radius: 5px;
 }
 
-.sidebar .sidebar-content:hover a{
+.sidebar .sidebar-content:hover a {
     color: var(--navbar-footer-bg-color);
 }
 
-.sidebar-content a{
+.sidebar-content a {
     color: #FAFAFF;
     font-family: var(--font-family);
     text-decoration: none;
@@ -319,20 +321,22 @@ nav .nav-content {
 
 
 .page-container {
-    display: flex; /* Use Flexbox */
-  }
-  
-  .page-sidebar {
-    flex: 0 0 200px; /* Make "one" 200px wide and don't allow it to grow or shrink */
-  }
-  
-  .page-content {
-    flex: 1; /* Let "two" take up the remaining space */
-  }
-  
+    display: flex;
+    /* Use Flexbox */
+}
+
+.page-sidebar {
+    flex: 0 0 200px;
+    /* Make "one" 200px wide and don't allow it to grow or shrink */
+}
+
+.page-content {
+    flex: 1;
+    /* Let "two" take up the remaining space */
+}
+
 
 .templateContainer {
-    background-color: var(--pink);
     width: 100%;
     display: flex;
     justify-content: end;
@@ -341,7 +345,7 @@ nav .nav-content {
 
 .templateContent {
     background-color: var(--button-blue);
-    width: 80%;
+    width: 100%;
     height: auto;
     border-radius: 30px;
     padding: 3rem;
@@ -517,4 +521,105 @@ nav .nav-content {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+}
+
+.profileContainer {
+    width: 100%;
+    height: 50rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profileContent {
+    width: 50%;
+    height: 100%;
+    background-color: var(--body-bg-color);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.profileUp {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    background: rgb(140, 0, 255);
+    background: linear-gradient(0deg, rgba(140, 0, 255, 1) 31%, rgba(77, 77, 255, 1) 92%);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.profileImg {
+    width: 30%;
+    height: 100%;
+    background-color: var(--pink);
+    border: 2px solid var(--navbar-footer-bg-color);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.profileInfo {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileInfo h1 {
+    color: var(--pink);
+    font-size: 45px;
+    text-shadow: 0px 0px 5px var(--navbar-footer-bg-color);
+}
+
+.profileDown {
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(77, 77, 255);
+    background: linear-gradient(0deg, rgba(77, 77, 255, 1) 31%, rgba(140, 0, 255, 1) 92%);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+:is(.profileUsername, .profileName, .profileSurname, .profileEmail) {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+}
+
+:is(.profileUsername, .profileName, .profileSurname, .profileEmail) label {
+    font-size: 25px;
+    color: var(--pink);
+    margin-right: 1rem;
+    text-shadow: 0px 0px 5px var(--navbar-footer-bg-color);
+}
+
+:is(.profileUsername, .profileName, .profileSurname, .profileEmail) input {
+    font-size: 25px;
+    background-color: var(--pink);
+    border: 2px solid var(--navbar-footer-bg-color);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.profileSave {
+    width: 75%;
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
 }
