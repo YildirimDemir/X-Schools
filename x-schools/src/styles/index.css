@@ -364,13 +364,13 @@ nav .nav-content {
 .profileContent {
     width: 50%;
     height: 100%;
-    background-color: var(--dark-blue);
-    border: 5px solid var(--navbar-footer-bg-color);
+    background-color: var(--body-bg-color);
     border-radius: 20px;
     padding: 3rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .profileUp {
@@ -378,15 +378,20 @@ nav .nav-content {
     height: 40%;
     display: flex;
     justify-content: center;
+    background: rgb(140, 0, 255);
+    background: linear-gradient(0deg, rgba(140, 0, 255, 1) 31%, rgba(77, 77, 255, 1) 92%);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .profileImg {
-    width: 40%;
+    width: 30%;
     height: 100%;
     background-color: var(--pink);
-    border: 5px solid var(--navbar-footer-bg-color);
+    border: 2px solid var(--navbar-footer-bg-color);
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .profileInfo {
@@ -412,6 +417,11 @@ nav .nav-content {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: rgb(77, 77, 255);
+    background: linear-gradient(0deg, rgba(77, 77, 255, 1) 31%, rgba(140, 0, 255, 1) 92%);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 :is(.profileUsername, .profileName, .profileSurname, .profileEmail) {
@@ -431,10 +441,10 @@ nav .nav-content {
 :is(.profileUsername, .profileName, .profileSurname, .profileEmail) input {
     font-size: 25px;
     background-color: var(--pink);
-    border: 5px solid var(--navbar-footer-bg-color);
+    border: 2px solid var(--navbar-footer-bg-color);
     border-radius: 10px;
     padding: 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .profileSave {

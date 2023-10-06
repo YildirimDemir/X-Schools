@@ -33,7 +33,7 @@ export default function Profile() {
                         </div>
                     </div>
                     <div className="profileSave">
-                        <Button title="Save" color="black" bgcolor='white' />
+                        <Button title="Save" color="white" bgcolor='black' />
                     </div>
                 </div>
             </div>
