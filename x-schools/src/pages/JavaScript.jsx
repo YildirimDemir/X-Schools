@@ -1,14 +1,42 @@
+import { useEffect, useState } from "react";
 import SideBar from "../ui/SideBar";
+import jsSupabase from "../services/jsSupabase";
 
 export default function JavaScript(){
-    const jsPath = [
-        {path: '/javascript/intro', item: 'JS Intro'},
-        {path: '/javascript/dom', item: 'JS DOM'},
-        {path: '/javascript/api', item: 'JS API'},
-        {path: '/javascript/function', item: 'JS Function'},
-        {path: '/javascript/array', item: 'JS Array'},
-    ]
+    // const reactPath = [
+    //     {path: '/react/components', item: 'React Components'},
+    //     {path: '/react/props', item: 'React Props'},
+    //     {path: '/react/router', item: 'React Router'},
+    //     {path: '/react/list', item: 'React List'},
+    //     {path: '/react/query', item: 'React Query'},
+    // ]
+
+    const [javascript, setJavascript] = useState([]);
+
+    useEffect(() => {
+        async function getReact() {
+            const  { data, error } = await jsSupabase
+            .from('javascript')
+            .select('*')
+          
+            if(error){
+              console.error(error)
+              throw new Error('JavaScript contents could not be loaded')
+            }
+          
+             setJavascript(data);
+          }
+          getReact();
+      }, [])
+
     return(
-        <SideBar list={jsPath}/>
+        <div className='page-container'>
+         <div className='page-sidebar'>
+           <SideBar list={javascript}/>
+         </div>
+         <div className='page-content'>
+            
+         </div>
+        </div>
     )
 }

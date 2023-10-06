@@ -30,6 +30,13 @@ export default function React(){
       }, [])
 
     return(
-        <SideBar list={react}/>
+        <div className='page-container'>
+         <div className='page-sidebar'>
+           <SideBar list={react}/>
+         </div>
+         <div className='page-content'>
+            
+         </div>
+        </div>
     )
 }
