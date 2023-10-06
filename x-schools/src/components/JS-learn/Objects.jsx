@@ -1,35 +1,12 @@
-import { useEffect, useState } from 'react';
 import SideBar from '../../ui/SideBar';
 import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
-import dataSupabase from "../../services/dataSupabase";
+import JavascriptData from '../../Data/JavascriptData';
 
 export default function Objects() {
-    const [javascript, setJavascript] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        async function getReact() {
-            try {
-                const { data, error } = await dataSupabase
-                    .from('javascript')
-                    .select('*');
-
-                if (error) {
-                    console.error(error);
-                    throw new Error('Javascript contents could not be loaded');
-                }
-
-                setJavascript(data);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setIsLoading(false);
-            }
-        }
-        getReact();
-    }, []);
+    const { javascript, isLoading } = JavascriptData();
 
     const newJavascript = javascript.filter((item) => item.title === 'JS Objects');
 

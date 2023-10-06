@@ -1,28 +1,12 @@
-import { useEffect, useState } from "react";
-import dataSupabase from "../../services/dataSupabase";
 import SideBar from '../../ui/SideBar';
 import TemplatePage from "../../ui/TemplatePage";
 import CodeSpace from "../../ui/CodeSpace";
+import SQLData from "../../Data/SQLData";
+import Loader from '../../ui/Loader';
 
 export default function Or() {
 
-    const [SQL, setSQL] = useState([]);
-
-    useEffect(() => {
-        async function getSQL() {
-            const { data, error } = await dataSupabase
-                .from('sql')
-                .select('*')
-
-            if (error) {
-                console.error(error)
-                throw new Error('SQL contents could not be loaded')
-            }
-
-            setSQL(data);
-        }
-        getSQL();
-    }, []);
+    const { SQL, isLoading } = SQLData();
 
     const newSQL = SQL.filter((item) => item.title === 'SQL OR');
 
@@ -32,7 +16,7 @@ export default function Or() {
                 <SideBar list={SQL} />
             </div>
             <div className='page-content'>
-                {newSQL.map((item, index) => (
+                {isLoading ? (<Loader />) : (newSQL.map((item, index) => (
                     <TemplatePage key={index}
                         title={item.title}
                         secondTitle="Learn OR"
@@ -52,7 +36,7 @@ export default function Or() {
                             codeAreaColor="white"
                             enterCode={`${item.code}`} />
                         } />
-                ))}
+                )))}
             </div>
         </div>
     )

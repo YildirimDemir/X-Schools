@@ -1,35 +1,12 @@
-import { useEffect, useState } from 'react';
 import SideBar from '../../ui/SideBar';
-import dataSupabase from "../../services/dataSupabase";
 import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
+import ReactData from '../../Data/ReactData';
 
 export default function Props() {
-    const [react, setReact] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        async function getReact() {
-            try {
-                const { data, error } = await dataSupabase
-                    .from('react')
-                    .select('*');
-
-                if (error) {
-                    console.error(error);
-                    throw new Error('React contents could not be loaded');
-                }
-
-                setReact(data);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setIsLoading(false);
-            }
-        }
-        getReact();
-    }, []);
+    const { react, isLoading } = ReactData();
 
     const newReact = react.filter((item) => item.title === 'React Props');
 

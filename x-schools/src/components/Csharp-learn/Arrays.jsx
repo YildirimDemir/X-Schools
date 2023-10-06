@@ -1,28 +1,12 @@
-import { useEffect, useState } from "react";
-import dataSupabase from "../../services/dataSupabase";
 import SideBar from '../../ui/SideBar';
 import TemplatePage from "../../ui/TemplatePage";
 import CodeSpace from "../../ui/CodeSpace";
+import CsharpData from "../../Data/CsharpData";
+import Loader from '../../ui/Loader';
 
 export default function Arrays() {
 
-    const [csharp, setCsharp] = useState([]);
-
-    useEffect(() => {
-        async function getCsharp() {
-            const { data, error } = await dataSupabase
-                .from('c')
-                .select('*')
-
-            if (error) {
-                console.error(error)
-                throw new Error('C# contents could not be loaded')
-            }
-
-            setCsharp(data);
-        }
-        getCsharp();
-    }, []);
+    const { csharp, isLoading } = CsharpData();
 
     const newCsharp = csharp.filter((item) => item.title === 'C# Arrays');
 
@@ -32,27 +16,30 @@ export default function Arrays() {
                 <SideBar list={csharp} />
             </div>
             <div className='page-content'>
-                {newCsharp.map((item, index) => (
-                    <TemplatePage key={index}
-                        title={item.title}
-                        secondTitle="Learn Arrays"
-                        about={`${item.about}`}
-                        contentColor="#273469"
-                        titleColor="white"
-                        secondTitleColor="white"
-                        aboutColor="white"
-                        code={<CodeSpace
-                            title={"C# Example"}
-                            lang={"text/x-csharp"}
-                            readOnly={true}
-                            lineNumbers={true}
-                            codeWrapColor="#30343F"
-                            codeWrapBorderColor="white"
+                {isLoading ? (<Loader />) : (
+                    newCsharp.map((item, index) => (
+                        <TemplatePage key={index}
+                            title={item.title}
+                            secondTitle="Learn Arrays"
+                            about={`${item.about}`}
+                            contentColor="#273469"
                             titleColor="white"
-                            codeAreaColor="white"
-                            enterCode={`${item.code}`} />
-                        } />
-                ))}
+                            secondTitleColor="white"
+                            aboutColor="white"
+                            code={<CodeSpace
+                                title={"C# Example"}
+                                lang={"text/x-csharp"}
+                                readOnly={true}
+                                lineNumbers={true}
+                                codeWrapColor="#30343F"
+                                codeWrapBorderColor="white"
+                                titleColor="white"
+                                codeAreaColor="white"
+                                enterCode={`${item.code}`} />
+                            } />
+                    ))
+                )}
+
             </div>
         </div>
     )
