@@ -3,19 +3,18 @@ import React, { useState } from 'react'
 export default function TextInput({
   placeholder,
   content,
+  valueSet
 }) {
-  const [textValue, setTextValue] = useState('')
 
-  return(
+  return (
     <div className="text-input general-input">
-    <span>{content}</span>
-    <input 
-      type="text" 
-      placeholder={placeholder}
-      value={textValue}
-      onChange={(e) => setTextValue(e.target.value)}
-    >
-    </input>
+      <span>{content}</span>
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={(e) => valueSet(e.target.value)}
+      >
+      </input>
     </div>
   )
 }
