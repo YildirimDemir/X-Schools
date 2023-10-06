@@ -19,9 +19,10 @@ import Arrays from "./components/Csharp-learn/Arrays"
 import Booleans from "./components/Csharp-learn/Booleans"
 import Data from "./components/Csharp-learn/Data"
 import Operators from "./components/Csharp-learn/Operators"
-import Strings from "./components/Csharp-learn/Strings"
-import Switch from "./components/Csharp-learn/Switch"
-import Variables from "./components/Csharp-learn/Variables"
+import CSharpStrings from "./components/Csharp-learn/Strings"
+import CSharpSwitch from "./components/Csharp-learn/Switch"
+import CSharpVariables from "./components/Csharp-learn/Variables"
+import Variables from "./components/JS-learn/Variables"
 import Delete from "./components/SQL-learn/Delete"
 import And from "./components/SQL-learn/And"
 import Between from "./components/SQL-learn/Between"
@@ -32,7 +33,8 @@ import SQLSyntax from "./components/SQL-learn/Syntax"
 import Union from "./components/SQL-learn/Union"
 import Update from "./components/SQL-learn/Update"
 import Where from "./components/SQL-learn/Where"
-import Profile from "./pages/Profile"import UseMemo from "./components/React-learn/UseMemo"
+import Profile from "./pages/Profile"
+import UseMemo from "./components/React-learn/UseMemo"
 import Props from "./components/React-learn/Props"
 import Routers from "./components/React-learn/Routers"
 import Lists from "./components/React-learn/Lists"
@@ -42,7 +44,6 @@ import UseEffect from "./components/React-learn/UseEffect"
 import UseReducer from "./components/React-learn/UseReducer"
 import UseRef from "./components/React-learn/UseRef"
 import Assignment from "./components/JS-learn/Assignment"
-import Variables from "./components/JS-learn/Variables"
 import DataTypes from "./components/JS-learn/DataTypes"
 import JsFunctions from "./components/JS-learn/JsFunctions"
 import Objects from "./components/JS-learn/Objects"
@@ -75,12 +76,12 @@ export default function App() {
           <Route path='/c/syntax' element={<Syntax />} />
           <Route path='/c/output' element={<Output />} />
           <Route path='/c/comments' element={<Comments />} />
-          <Route path='/c/variables' element={<Variables />} />
+          <Route path='/c/variables' element={<CSharpVariables />} />
           <Route path='/c/data' element={<Data />} />
           <Route path='/c/operators' element={<Operators />} />
-          <Route path='/c/strings' element={<Strings />} />
+          <Route path='/c/strings' element={<CSharpStrings />} />
           <Route path='/c/booleans' element={<Booleans />} />
-          <Route path='/c/swith' element={<Switch />} />
+          <Route path='/c/swith' element={<CSharpSwitch />} />
           <Route path='/c/arrays' element={<Arrays />} />
           <Route path='/sql/and' element={<And />} />
           <Route path='/sql/between' element={<Between />} />
@@ -93,24 +94,24 @@ export default function App() {
           <Route path='/sql/update' element={<Update />} />
           <Route path='/sql/where' element={<Where />} />
           <Route path='/react/useMemo' element={<UseMemo />} />
-      <Route path='/react/props' element={<Props />} />
-      <Route path='/react/router' element={<Routers />} />
-      <Route path='/react/lists' element={<Lists />} />
-      <Route path='/react/events' element={<Events />} />
-      <Route path='/react/useState' element={<UseState />} />
-      <Route path='/react/useEffect' element={<UseEffect />} />
-      <Route path='/react/useReducer' element={<UseReducer />} />
-      <Route path='/react/useRef' element={<UseRef />} />
-      <Route path='/javascript/assignment' element={<Assignment />} />
-      <Route path='/javascript/variables' element={<Variables />} />
-      <Route path='/javascript/data-types' element={<DataTypes />} />
-      <Route path='/javascript/functions' element={<JsFunctions />} />
-      <Route path='/javascript/objects' element={<Objects />} />
-      <Route path='/javascript/strings' element={<Strings />} />
-      <Route path='/javascript/if-else' element={<JsIfElse />} />
-      <Route path='/javascript/switch' element={<Switch />} />
-      <Route path='/javascript/sets' element={<Sets />} />
-      <Route path='/javascript/maps' element={<JsMaps />} />
+          <Route path='/react/props' element={<Props />} />
+          <Route path='/react/router' element={<Routers />} />
+          <Route path='/react/lists' element={<Lists />} />
+          <Route path='/react/events' element={<Events />} />
+          <Route path='/react/useState' element={<UseState />} />
+          <Route path='/react/useEffect' element={<UseEffect />} />
+          <Route path='/react/useReducer' element={<UseReducer />} />
+          <Route path='/react/useRef' element={<UseRef />} />
+          <Route path='/javascript/assignment' element={<Assignment />} />
+          <Route path='/javascript/variables' element={<Variables />} />
+          <Route path='/javascript/data-types' element={<DataTypes />} />
+          <Route path='/javascript/functions' element={<JsFunctions />} />
+          <Route path='/javascript/objects' element={<Objects />} />
+          <Route path='/javascript/strings' element={<Strings />} />
+          <Route path='/javascript/if-else' element={<JsIfElse />} />
+          <Route path='/javascript/switch' element={<Switch />} />
+          <Route path='/javascript/sets' element={<Sets />} />
+          <Route path='/javascript/maps' element={<JsMaps />} />
     </Routes>
         <Footer />
       </BrowserRouter>
