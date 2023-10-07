@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../ui/Button";
 import LScard from "../ui/LScard";
 import PasswordInput from "../ui/PasswordInput";
@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
 
-  const [usersData, setUsersData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [username, setUsername] = useState('');
   const [name, setName] = useState('');
@@ -18,22 +17,6 @@ export default function SignUp() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
-
-  useEffect(() => {
-    async function getUsers() {
-      const { data, error } = await dataSupabase
-        .from('users')
-        .select('*')
-      if (error) {
-        console.error(error)
-        throw new Error('Users could not be loaded')
-      }
-      setUsersData(data);
-    }
-    getUsers();
-  }, []);
-
-  console.log(usersData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

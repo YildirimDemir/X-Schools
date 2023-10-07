@@ -1,6 +1,12 @@
-import Button from '../ui/Button'
+import Button from '../ui/Button';
+import PropTypes from 'prop-types';
 
-export default function Profile() {
+export default function Profile({ requestUser }) {
+
+    Profile.propTypes = {
+        requestUser: PropTypes.object.isRequired,
+    };
+
     return (
         <>
             <div className='profileContainer'>
@@ -10,26 +16,26 @@ export default function Profile() {
 
                         </div>
                         <div className="profileInfo">
-                            <h1>Name Surname</h1>
+                            <h1>{requestUser.firstname} {requestUser.lastname}</h1>
                             <Button title="Edit" color="black" bgcolor='white' />
                         </div>
                     </div>
                     <div className='profileDown'>
                         <div className="profileUsername">
                             <label>Username:</label>
-                            <input type="text" />
+                            <input disabled defaultValue={requestUser.username} type="text" />
                         </div>
                         <div className="profileName">
                             <label>Name:</label>
-                            <input type="text" />
+                            <input disabled defaultValue={requestUser.firstname} type="text" />
                         </div>
                         <div className="profileSurname">
                             <label>Surname:</label>
-                            <input type="text" />
+                            <input disabled defaultValue={requestUser.lastname} type="text" />
                         </div>
                         <div className="profileEmail">
                             <label>Email:</label>
-                            <input type="email" />
+                            <input disabled defaultValue={requestUser.email} type="email" />
                         </div>
                     </div>
                     <div className="profileSave">
