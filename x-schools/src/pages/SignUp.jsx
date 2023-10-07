@@ -22,7 +22,7 @@ export default function SignUp() {
   useEffect(() => {
     async function getUsers() {
       const { data, error } = await dataSupabase
-        .from('c#')
+        .from('users')
         .select('*')
       if (error) {
         console.error(error)
