@@ -33,6 +33,8 @@ export default function SignUp() {
     getUsers();
   }, []);
 
+  console.log(usersData);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     async function handleSignup() {
@@ -53,7 +55,6 @@ export default function SignUp() {
           console.error('Sıgn Up Error:', error);
         } else {
           console.log('User Save:', username);
-          console.log(usersData);
           navigate('/home');
         }
       }
