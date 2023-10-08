@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../ui/Button";
 import LScard from "../ui/LScard";
 import PasswordInput from "../ui/PasswordInput";
@@ -9,29 +9,16 @@ import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
 
-  const [usersData, setUsersData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [username, setUsername] = useState('');
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState(null);
+  const [name, setName] = useState(null);
+  const [surname, setSurname] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [notMatch, setNotMatch] = useState("");
+  const [notNull, setNotNull] = useState("");
   const navigate = useNavigate();
-
-  useEffect(() => {
-    async function getUsers() {
-      const { data, error } = await dataSupabase
-        .from('c#')
-        .select('*')
-      if (error) {
-        console.error(error)
-        throw new Error('Users could not be loaded')
-      }
-      setUsersData(data);
-    }
-    getUsers();
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,15 +37,15 @@ export default function SignUp() {
           ])
           .select();
         if (error) {
-          console.error('Sıgn Up Error:', error);
+          setNotMatch("");
+          setNotNull("You cannot leave the information blank!");
         } else {
-          console.log('User Save:', username);
-          console.log(usersData);
-          navigate('/home');
+          setNotNull("");
+          navigate('/sign-in');
         }
       }
       else {
-        console.log("Password is not same!");
+        setNotMatch("Password is not same!");
       }
     }
     handleSignup();
@@ -98,11 +85,17 @@ export default function SignUp() {
         <>
         </>
       }
+      {notNull && <h1 style={{ marginBottom: "5px", color: "red" }}>{notNull}</h1>}
       <div className="box" style={isOpen ? { filter: 'blur(4px)' } : {}}>
         <div className="inputs inputs2">
           <h1>Hi! 👋</h1>
           <span>Sign Up for learn how to code!</span>
-          <form onSubmit={handleSubmit}>
+          <form style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center"
+          }} onSubmit={handleSubmit}>
             <div className="ns">
               <TextInput content='🥇' placeholder='Name' valueSet={setName} />
               <TextInput content='🥈' placeholder='Surname' valueSet={setSurname} />
@@ -115,6 +108,7 @@ export default function SignUp() {
               <PasswordInput placeholder="Password" content="🔒" valueSet={setPassword} />
               <PasswordInput placeholder="Password again" content="🔒" valueSet={setConfirmPassword} />
             </div>
+            {notMatch && <p style={{ marginBottom: "5px", color: "red" }}>{notMatch}</p>}
             <div className="checkbox2">
               <input type="checkbox" id="i" />
               <label htmlFor="i" className="small-font">I read and agree to <span className="small-font tac" onClick={() => isOpenHandler()}>Terms & Conditions</span></label>

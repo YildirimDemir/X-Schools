@@ -1,25 +1,9 @@
-import { useEffect, useState } from "react";
-import dataSupabase from "../services/dataSupabase";
 import SideBar from "../ui/SideBar";
+import CSSData from "../Data/CSSData";
 
 export default function Css() {
-    const [css, setCss] = useState([]);
 
-    useEffect(() => {
-        async function getReact() {
-            const { data, error } = await dataSupabase
-                .from('css')
-                .select('*')
-
-            if (error) {
-                console.error(error)
-                throw new Error('CSS contents could not be loaded')
-            }
-
-            setCss(data);
-        }
-        getReact();
-    }, [])
+    const { css } = CSSData();
 
     return (
         <div className='page-container'>

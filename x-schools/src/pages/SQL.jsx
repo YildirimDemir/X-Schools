@@ -1,26 +1,9 @@
-import { useEffect, useState } from "react";
-import dataSupabase from "../services/dataSupabase";
 import SideBar from '../ui/SideBar';
+import SQLData from '../Data/SQLData';
 
 export default function SQL() {
 
-    const [SQL, setSQL] = useState([]);
-
-    useEffect(() => {
-        async function getSQL() {
-            const { data, error } = await dataSupabase
-                .from('sql')
-                .select('*')
-
-            if (error) {
-                console.error(error)
-                throw new Error('SQL contents could not be loaded')
-            }
-
-            setSQL(data);
-        }
-        getSQL();
-    }, []);
+    const { SQL } = SQLData();
 
     return (
         <div className='page-container'>

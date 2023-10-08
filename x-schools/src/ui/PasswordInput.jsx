@@ -27,9 +27,9 @@ export default function PasswordInput({
         placeholder={placeholder}
         onChange={(e) => valueSet(e.target.value)}
       />
-      <button onClick={() => showPassHandler()}>
+      <span onClick={() => showPassHandler()}>
         {showPass ? '🐵' : '🙈'}
-      </button>
+      </span>
     </div>
   )
 }

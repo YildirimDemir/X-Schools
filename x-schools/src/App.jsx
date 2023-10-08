@@ -62,14 +62,20 @@ import JsMaps from "./components/JS-learn/Maps"
 // import PythonIfElse from "./components/Python-learn/If-Else"
 // import PythonWhile from "./components/Python-learn/While"
 // import PythonArrays from "./components/Python-learn/Arrays"
-// import PythonJson from './components/Python-learn/JSON'
+// import PythonJson from './components/Python-learn/JSON'import { useState } from "react"
+
 
 export default function App() {
+
+  const logStatusLocalStorage = JSON.parse(localStorage.getItem('Log Status'));
+  const [log, setLog] = useState(logStatusLocalStorage);
+  const requestUserLocalStorage = JSON.parse(localStorage.getItem('Request User'));
+  const [requestUser, setRequestUser] = useState(requestUserLocalStorage);
 
   return (
     <div>
       <BrowserRouter>
-        <NavBar />
+        <NavBar logStatus={log} logSetFalse={setLog} requestUser={requestUser} requestUserSet={setRequestUser} />
         <Routes>
           <Route index element={<Home />} />
           <Route path='/home' element={<Home />} />
@@ -81,9 +87,9 @@ export default function App() {
           <Route path='/python' element={<Python />} />
           <Route path='/c' element={<Csharp />} />
           <Route path='/sql' element={<SQL />} />
-          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/sign-in' element={<SignIn logSetTrue={setLog} requestUserSet={setRequestUser} />} />
           <Route path='/sign-up' element={<SignUp />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<Profile requestUser={requestUser} requestUserSet={setRequestUser} />} />
           <Route path='/c/syntax' element={<CSharpSyntax />} />
           <Route path='/c/output' element={<CSharpOutput />} />
           <Route path='/c/comments' element={<CSharpComments />} />
@@ -134,7 +140,7 @@ export default function App() {
           <Route path='/python/while' element={<PythonWhile />} />
           <Route path='/python/arrays' element={<PythonArrays />} />
           <Route path='/python/json' element={<PythonJson />} /> */}
-    </Routes>
+        </Routes>
         <Footer />
       </BrowserRouter>
     </div>
