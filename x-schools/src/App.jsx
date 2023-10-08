@@ -81,7 +81,7 @@ export default function App() {
           <Route path='/sql' element={<SQL />} />
           <Route path='/sign-in' element={<SignIn logSetTrue={setLog} requestUserSet={setRequestUser} />} />
           <Route path='/sign-up' element={<SignUp />} />
-          <Route path='/profile' element={<Profile requestUser={requestUser} />} />
+          <Route path='/profile' element={<Profile requestUser={requestUser} requestUserSet={setRequestUser} />} />
           <Route path='/c/syntax' element={<CSharpSyntax />} />
           <Route path='/c/output' element={<CSharpOutput />} />
           <Route path='/c/comments' element={<CSharpComments />} />

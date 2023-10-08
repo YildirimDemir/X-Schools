@@ -35,7 +35,6 @@ export default function SignIn({ logSetTrue, requestUserSet }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(usersData);
     const newUser = usersData.find((item) => item.email === email && item.password === password);
     if (newUser) {
       requestUserSet(newUser);

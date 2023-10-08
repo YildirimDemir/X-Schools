@@ -9,7 +9,7 @@ export default function NavBar({ logStatus, requestUser, logSetFalse, requestUse
     logStatus: PropTypes.bool.isRequired,
     logSetFalse: PropTypes.func.isRequired,
     requestUser: PropTypes.object.isRequired,
-    requestUserSet: PropTypes.func.isRequired
+    requestUserSet: PropTypes.object.isRequired
   };
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
