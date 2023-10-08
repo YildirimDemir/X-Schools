@@ -53,8 +53,16 @@ import JsIfElse from "./components/JS-learn/JsIfElse"
 import Switch from "./components/JS-learn/Switch"
 import Sets from "./components/JS-learn/Sets"
 import JsMaps from "./components/JS-learn/Maps"
-import Comments from "./components/Python-learn/Comments"
-
+// import PythonComments from "./components/Python-learn/Comments"
+// import PythonVariables from "./components/Python-learn/Variables"
+// import PythonData from "./components/Python-learn/Data"
+// import PythonNumber from "./components/Python-learn/Number"
+// import PythonStrings from "./components/Python-learn/Strings"
+// import PythonLists from "./components/Python-learn/Lists"
+// import PythonIfElse from "./components/Python-learn/If-Else"
+// import PythonWhile from "./components/Python-learn/While"
+// import PythonArrays from "./components/Python-learn/Arrays"
+// import PythonJson from './components/Python-learn/JSON'
 
 export default function App() {
 
@@ -116,7 +124,16 @@ export default function App() {
           <Route path='/javascript/switch' element={<Switch />} />
           <Route path='/javascript/sets' element={<Sets />} />
           <Route path='/javascript/maps' element={<JsMaps />} />
-          <Route path='/python/comments' element={<Comments />} />
+          {/* <Route path='/python/comments' element={<PythonComments />} />
+          <Route path='/python/variables' element={<PythonVariables />} />
+          <Route path='/python/data' element={<PythonData />} />
+          <Route path='/python/number' element={<PythonNumber />} />
+          <Route path='/python/strings' element={<PythonStrings />} />
+          <Route path='/python/lists' element={<PythonLists />} />
+          <Route path='/python/ifelse' element={<PythonIfElse />} />
+          <Route path='/python/while' element={<PythonWhile />} />
+          <Route path='/python/arrays' element={<PythonArrays />} />
+          <Route path='/python/json' element={<PythonJson />} /> */}
     </Routes>
         <Footer />
       </BrowserRouter>

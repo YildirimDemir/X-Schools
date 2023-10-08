@@ -5,7 +5,7 @@ import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
 
-export default function Components() {
+export default function Commments() {
     const [python, setPython] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
