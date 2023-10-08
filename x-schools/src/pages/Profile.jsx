@@ -7,10 +7,9 @@ export default function Profile({ requestUser, requestUserSet }) {
 
     Profile.propTypes = {
         requestUser: PropTypes.object.isRequired,
-        requestUserSet: PropTypes.array.isRequired
+        requestUserSet: PropTypes.func.isRequired
     };
 
-    const [usersData, setUsersData] = useState([]);
     const [username, setUsername] = useState(requestUser.username);
     const [name, setName] = useState(requestUser.firstname);
     const [surname, setSurname] = useState(requestUser.lastname);
@@ -18,47 +17,31 @@ export default function Profile({ requestUser, requestUserSet }) {
     const [disabled, setDisabled] = useState(true);
     const navigate = useNavigate();
 
-    const handleData = () => {
-        async function getUsers() {
-            const { data, error } = await dataSupabase
-                .from('users')
-                .select('*')
-            if (error) {
-                console.error(error)
-                throw new Error('Users could not be loaded')
-            }
-            console.log(data);
-            setUsersData(data);
-            const newUser = usersData.find((item) => item.username === username);
-            requestUserSet(newUser);
-            console.log(newUser);
-            localStorage.setItem('Request User', newUser);
-        }
-        getUsers();
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // async function handleUpdate() {
-        //     const { error } = await dataSupabase
-        //         .from('users')
-        //         .update({
-        //             username: username,
-        //             firstname: name,
-        //             lastname: surname,
-        //             email: email,
-        //         })
-        //         .eq('id', requestUser.id)
-        //         .select()
-        //     if (error) {
-        //         console.error('Update Error:', error);
-        //     } else {
-        //         console.log('User Save:', username);
-        //     }
-        //     setDisabled(true);
-        // }
-        // handleUpdate();
-        handleData();
+        async function handleUpdate() {
+            const { data, error } = await dataSupabase
+                .from('users')
+                .update({
+                    username: username,
+                    firstname: name,
+                    lastname: surname,
+                    email: email,
+                })
+                .eq('id', requestUser.id)
+                .select()
+            if (error) {
+                console.error('Update Error:', error);
+            } else {
+                console.log('User Save:', username);
+            }
+            const [first] = data;
+            setDisabled(true);
+            requestUserSet(first);
+            const requestUserJSON = JSON.stringify(first);
+            localStorage.setItem('Request User', requestUserJSON);
+        }
+        handleUpdate();
         navigate("/profile");
     }
 
