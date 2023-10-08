@@ -15,6 +15,7 @@ export default function Profile({ requestUser, requestUserSet }) {
     const [surname, setSurname] = useState(requestUser.lastname);
     const [email, setEmail] = useState(requestUser.email);
     const [disabled, setDisabled] = useState(true);
+    const [save, setSave] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -33,7 +34,8 @@ export default function Profile({ requestUser, requestUserSet }) {
             if (error) {
                 console.error('Update Error:', error);
             } else {
-                console.log('User Save:', username);
+                setDisabled(true);
+                setSave(false);
             }
             const [first] = data;
             setDisabled(true);
@@ -46,7 +48,8 @@ export default function Profile({ requestUser, requestUserSet }) {
     }
 
     const handleEdit = () => {
-        setDisabled(false);
+        setDisabled((disabled) => !disabled);
+        setSave((save) => !save);
     }
 
     return (
@@ -59,7 +62,7 @@ export default function Profile({ requestUser, requestUserSet }) {
                         </div>
                         <div className="profileInfo">
                             <h1>{requestUser.firstname} {requestUser.lastname}</h1>
-                            <button onClick={handleEdit}>Edit</button>
+                            <button className='profileEditBtn' onClick={handleEdit}>Edit</button>
                         </div>
                     </div>
                     <form onSubmit={handleSubmit}>
@@ -81,9 +84,9 @@ export default function Profile({ requestUser, requestUserSet }) {
                                 <input disabled={disabled} defaultValue={requestUser.email} onChange={(e) => (setEmail(e.target.value))} type="email" />
                             </div>
                         </div>
-                        <div className="profileSave">
-                            <button>Save</button>
-                        </div>
+                        {save && <div className="profileSave">
+                            <button className='profileSaveBtn'>Save</button>
+                        </div>}
                     </form>
                 </div>
             </div>

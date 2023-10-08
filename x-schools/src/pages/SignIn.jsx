@@ -17,6 +17,7 @@ export default function SignIn({ logSetTrue, requestUserSet }) {
   const [usersData, setUsersData] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [notUser, setNotUser] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,20 +44,27 @@ export default function SignIn({ logSetTrue, requestUserSet }) {
       logSetTrue(true);
       const logStatusJSON = JSON.stringify(true);
       localStorage.setItem('Log Status', logStatusJSON);
+      setNotUser("");
       navigate("/home");
     }
     else {
-      console.log("Incorrect Information Entry...");
+      setNotUser("You entered the wrong password or email!");
     }
   };
 
   return (
     <div className="sign">
+      {notUser && <h1 style={{ marginBottom: "5px", color: "red" }}>{notUser}</h1>}
       <div className="box">
         <div className="inputs">
           <h1>Hello!</h1>
           <span>Sign-In your account</span>
-          <form onSubmit={handleSubmit}>
+          <form style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center"
+          }} onSubmit={handleSubmit}>
             <TextInput placeholder='E-Mail' content='✉️' valueSet={setEmail} />
             <PasswordInput placeholder="Password" content="🔒" valueSet={setPassword} />
             <div className="checkbox">
