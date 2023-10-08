@@ -55,32 +55,32 @@ export default function Profile({ requestUser, requestUserSet }) {
     return (
         <>
             <div className='profileContainer'>
-                <div className='profileContent'>
-                    <div className='profileUp'>
-                        <div className="profileImg">
-                            <img src="../../public/user-pp/v.jpg" alt="" width="100%" height="100%" />
-                        </div>
-                        <div className="profileInfo">
-                            <h1>{requestUser.firstname} {requestUser.lastname}</h1>
-                            <button className='profileEditBtn' onClick={handleEdit}>Edit</button>
-                        </div>
+                <div className='profileUp'>
+                    <div className="profileImg">
+                        <img style={{ borderRadius: "20px" }} src="../../public/user-pp/v.jpg" alt="" width="100%" height="auto" />
                     </div>
-                    <form onSubmit={handleSubmit}>
+                    <div className="profileInfo">
+                        <h1>{requestUser.firstname} {requestUser.lastname}</h1>
+                        <button className='profileEditBtn' onClick={handleEdit}>Edit</button>
+                    </div>
+                </div>
+                <div className='profileContent'>
+                    <form style={{ width: "85%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }} onSubmit={handleSubmit}>
                         <div className='profileDown'>
                             <div className="profileUsername">
-                                <label>Username:</label>
+                                <label>Username</label>
                                 <input disabled={disabled} defaultValue={requestUser.username} onChange={(e) => (setUsername(e.target.value))} type="text" />
                             </div>
                             <div className="profileName">
-                                <label>Name:</label>
+                                <label>Name</label>
                                 <input disabled={disabled} defaultValue={requestUser.firstname} onChange={(e) => (setName(e.target.value))} type="text" />
                             </div>
                             <div className="profileSurname">
-                                <label>Surname:</label>
+                                <label>Surname</label>
                                 <input disabled={disabled} defaultValue={requestUser.lastname} onChange={(e) => (setSurname(e.target.value))} type="text" />
                             </div>
                             <div className="profileEmail">
-                                <label>Email:</label>
+                                <label>Email</label>
                                 <input disabled={disabled} defaultValue={requestUser.email} onChange={(e) => (setEmail(e.target.value))} type="email" />
                             </div>
                         </div>
