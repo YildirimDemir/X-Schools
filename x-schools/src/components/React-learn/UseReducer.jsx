@@ -22,7 +22,7 @@ export default function UseReducer() {
                     newReact.map((item, index) => (
                         <TemplatePage key={index}
                             title={item.title}
-                            secondTitle="Learn React"
+                            secondTitle="Learn useReducer"
                             about={`${item.about}`}
                             contentColor="#273469"
                             titleColor="white"

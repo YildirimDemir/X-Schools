@@ -8,7 +8,7 @@ export default function Sum() {
 
     const { SQL, isLoading } = SQLData();
 
-    const newSQL = SQL.filter((item) => item.title === 'SQL SUM()');
+    const newSQL = SQL.filter((item) => item.title === 'SQL SUM');
 
     return (
         <div className='page-container'>

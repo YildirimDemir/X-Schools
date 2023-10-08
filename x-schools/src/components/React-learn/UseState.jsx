@@ -22,7 +22,7 @@ export default function UseState() {
                     newReact.map((item, index) => (
                         <TemplatePage key={index}
                             title={item.title}
-                            secondTitle="Learn React"
+                            secondTitle="Learn useState"
                             about={`${item.about}`}
                             contentColor="#273469"
                             titleColor="white"

@@ -323,7 +323,7 @@ nav .nav-content {
 .page-container {
     display: flex;
     /* Use Flexbox */
-    min-height: 100vh;
+    min-height: 30rem;
 }
 
 .page-sidebar {
@@ -341,10 +341,8 @@ nav .nav-content {
 
 .templateContainer {
     width: 100%;
-    display: flex;
-    justify-content: center;
     padding: 2rem;
-    height: 100%;
+    height: auto;
 }
 
 .templateContent {
@@ -371,7 +369,6 @@ nav .nav-content {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 15%;
 }
 
 .codeAbout h2 {
