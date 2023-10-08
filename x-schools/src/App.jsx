@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useState } from "react"
 import NavBar from "./ui/NavBar"
 import Footer from "./ui/Footer"
 import About from "./pages/About"
@@ -53,16 +54,26 @@ import JsIfElse from "./components/JS-learn/JsIfElse"
 import Switch from "./components/JS-learn/Switch"
 import Sets from "./components/JS-learn/Sets"
 import JsMaps from "./components/JS-learn/Maps"
-// import PythonComments from "./components/Python-learn/Comments"
-// import PythonVariables from "./components/Python-learn/Variables"
-// import PythonData from "./components/Python-learn/Data"
-// import PythonNumber from "./components/Python-learn/Number"
-// import PythonStrings from "./components/Python-learn/Strings"
-// import PythonLists from "./components/Python-learn/Lists"
-// import PythonIfElse from "./components/Python-learn/If-Else"
-// import PythonWhile from "./components/Python-learn/While"
-// import PythonArrays from "./components/Python-learn/Arrays"
-// import PythonJson from './components/Python-learn/JSON'import { useState } from "react"
+import PythonComments from "./components/Python-learn/Comments"
+import PythonVariables from "./components/Python-learn/Variables"
+import PythonData from "./components/Python-learn/Data"
+import PythonNumber from "./components/Python-learn/Number"
+import PythonStrings from "./components/Python-learn/Strings"
+import PythonLists from "./components/Python-learn/Lists"
+import PythonIfElse from "./components/Python-learn/If-Else"
+import PythonWhile from "./components/Python-learn/While"
+import PythonArrays from "./components/Python-learn/Arrays"
+import PythonJson from './components/Python-learn/JSON'
+import CssFloat from "./components/CSS-learn/Float"
+import CssBorders from './components/CSS-learn/Borders'
+import CssDisplay from './components/CSS-learn/Display'
+import CssPadding from './components/CSS-learn/Padding'
+import CssMargins from './components/CSS-learn/Margins'
+import CssPosition from './components/CSS-learn/Position'
+import CssHeightWidth from './components/CSS-learn/Height-Width'
+import CssSyntax from './components/CSS-learn/Syntax'
+import CssText from './components/CSS-learn/Text'
+import CssSelectors from './components/CSS-learn/Selectors'
 
 
 export default function App() {
@@ -130,16 +141,26 @@ export default function App() {
           <Route path='/javascript/switch' element={<Switch />} />
           <Route path='/javascript/sets' element={<Sets />} />
           <Route path='/javascript/maps' element={<JsMaps />} />
-          {/* <Route path='/python/comments' element={<PythonComments />} />
+          <Route path='/python/comments' element={<PythonComments />} />
           <Route path='/python/variables' element={<PythonVariables />} />
           <Route path='/python/data' element={<PythonData />} />
-          <Route path='/python/number' element={<PythonNumber />} />
+          <Route path='/python/numbers' element={<PythonNumber />} />
           <Route path='/python/strings' element={<PythonStrings />} />
           <Route path='/python/lists' element={<PythonLists />} />
-          <Route path='/python/ifelse' element={<PythonIfElse />} />
+          <Route path='/python/if-else' element={<PythonIfElse />} />
           <Route path='/python/while' element={<PythonWhile />} />
           <Route path='/python/arrays' element={<PythonArrays />} />
-          <Route path='/python/json' element={<PythonJson />} /> */}
+          <Route path='/python/json' element={<PythonJson />} />
+          <Route path='/css/float' element={<CssFloat />} />
+          <Route path='/css/borders' element={<CssBorders />} />
+          <Route path='/css/display' element={<CssDisplay />} />
+          <Route path='/css/height-width' element={<CssHeightWidth />} />
+          <Route path='/css/margins' element={<CssMargins />} />
+          <Route path='/css/padding' element={<CssPadding />} />
+          <Route path='/css/position' element={<CssPosition />} />
+          <Route path='/css/selectors' element={<CssSelectors />} />
+          <Route path='/css/syntax' element={<CssSyntax />} />
+          <Route path='/css/text' element={<CssText />} />
         </Routes>
         <Footer />
       </BrowserRouter>

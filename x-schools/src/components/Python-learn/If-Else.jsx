@@ -1,37 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import SideBar from '../../ui/SideBar';
-import pythonSupabase from '../../services/pythonSupabase';
 import TemplatePage from '../../ui/TemplatePage';
 import CodeSpace from '../../ui/CodeSpace';
+import PythonData from '../../Data/PythonData';
 import Loader from '../../ui/Loader';
 
-export default function IfElse() {
-    const [python, setPython] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+export default function PythonIfElse() {
+    const {isLoading, python} = PythonData();
 
-    useEffect(() => {
-        async function getPython() {
-            try {
-                const { data, error } = await pythonSupabase
-                    .from('python')
-                    .select('*');
-
-                if (error) {
-                    console.error(error);
-                    throw new Error('Python contents could not be loaded');
-                }
-
-                setPython(data);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setIsLoading(false);
-            }
-        }
-        getPython();
-    }, []);
-
-    const newPython = python.filter((item) => item.title === 'Python If-Else');
+    const newPython = python.filter((item) => item.title === 'Python If Else');
 
     return (
         <div className='page-container'>

@@ -4,31 +4,8 @@ import CodeSpace from '../../ui/CodeSpace';
 import Loader from '../../ui/Loader';
 import PythonData from '../../Data/PythonData';
 
-export default function Commments() {
-    const [python, setPython] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        async function getPython() {
-            try {
-                const { data, error } = await pythonSupabase
-                    .from('python')
-                    .select('*');
-
-                if (error) {
-                    console.error(error);
-                    throw new Error('Python contents could not be loaded');
-                }
-
-                setPython(data);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setIsLoading(false);
-            }
-        }
-        getPython();
-    }, []);
+export default function PythonComments() {
+    const {isLoading, python} = PythonData();
 
     const newPython = python.filter((item) => item.title === 'Python Comments');
 
