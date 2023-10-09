@@ -840,6 +840,10 @@ nav .nav-content {
     justify-content: center;
     align-items: center;
 }
+.home-tutorial-box .codeWrap {
+    height: 95%;
+    margin: auto;
+}
 
 .home-tutorial-box h1 {
     background: linear-gradient(135deg, #fff, #4e3bff);

@@ -12,6 +12,17 @@
     .nav-tutorials .nav-dropdown{
         width: 180px;
     }
+    .home-tutorials .home-tutorial-card {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+        width: 90%;
+     }
+     .home-tutorial-card .home-tutorial-box {
+        width: 100%;
+     }
 }
 
 @media only screen and (max-width: 768px){
@@ -89,6 +100,13 @@
 
     .resp-open{
         display: block;
+    }
+    .home-tutorial-box h1 {
+        font-size: 2.5rem;
+    }
+    
+    .home-tutorial-box p {
+        font-size: 1rem;
     }
 }@media screen and (max-width:500px) {
   .content-bar {
