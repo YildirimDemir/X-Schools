@@ -39,6 +39,7 @@ export default function NavBar({ logStatus, requestUser, logSetFalse, requestUse
   const toNewPage = () => {
     setIsDropdownOpen(false)
     setIsUserDropdown(false);
+    setIsNavOpen(false);
   }
 
   const openNav = () => {
