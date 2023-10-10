@@ -1,5 +1,6 @@
 import SideBar from "../ui/SideBar";
 import PythonData from "../Data/PythonData";
+import TutorialsMain from "../ui/TutorialsMain";
 
 export default function Python() {
 
@@ -11,6 +12,7 @@ export default function Python() {
         <SideBar list={python} />
       </div>
       <div className='page-content'>
+      <TutorialsMain title={'Python'}/>
       </div>
     </div>
   )

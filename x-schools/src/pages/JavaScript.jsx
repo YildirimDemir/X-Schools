@@ -1,5 +1,6 @@
 import SideBar from "../ui/SideBar";
 import JavascriptData from "../Data/JavascriptData";
+import TutorialsMain from "../ui/TutorialsMain";
 
 export default function JavaScript() {
 
@@ -11,7 +12,7 @@ export default function JavaScript() {
         <SideBar list={javascript} />
       </div>
       <div className='page-content'>
-
+      <TutorialsMain title={'JavaScript'}/>
       </div>
     </div>
   )

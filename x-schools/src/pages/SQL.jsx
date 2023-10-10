@@ -1,5 +1,6 @@
 import SideBar from '../ui/SideBar';
 import SQLData from '../Data/SQLData';
+import TutorialsMain from '../ui/TutorialsMain';
 
 export default function SQL() {
 
@@ -11,7 +12,7 @@ export default function SQL() {
                 <SideBar list={SQL} />
             </div>
             <div className='page-content'>
-
+            <TutorialsMain title={'SQL'}/>
             </div>
         </div>
     )
