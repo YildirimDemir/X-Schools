@@ -15,6 +15,17 @@
     .text-si {
         display: none;
     }
+     .about-us .about-us-content{
+        width: 100%;
+    }
+    
+    .about-us-content  h1{
+        font-size: 1.8rem;
+    }
+    
+    .about-us-content p{
+        font-size: .9rem;
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -32,6 +43,7 @@
         /* right: -320px; */
         display: none;
         transition: .4s;
+        z-index: 150;
     }
 
     nav .nav-content.open{
@@ -112,7 +124,26 @@
         margin: 10px;
         padding: 12px;
     }
-}@media screen and (max-width:500px) {
+    .contact-us .contact-us-content{
+        width: 90%;
+        height: auto;
+    }
+    .contact-us-form .input-box{
+        width: 100vh;
+    }
+    .contact-us-content textarea {
+        width: 90%;
+        height: 20vh;
+    }
+    .contact-us-content button{
+        width: 150px;
+        height: 40px;
+    }
+    .tutorials-main h1 {
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width:500px) {
   .content-bar {
     flex-direction: column;
     align-items: center;

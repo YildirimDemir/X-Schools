@@ -1,5 +1,6 @@
 import SideBar from "../ui/SideBar";
 import ReactData from "../Data/ReactData";
+import TutorialsMain from "../ui/TutorialsMain";
 
 export default function React() {
 
@@ -11,7 +12,7 @@ export default function React() {
         <SideBar list={react} />
       </div>
       <div className='page-content'>
-
+        <TutorialsMain title={'React'}/>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import SideBar from "../ui/SideBar";
 import CSSData from "../Data/CSSData";
+import TutorialsMain from "../ui/TutorialsMain";
 
 export default function Css() {
 
@@ -11,7 +12,7 @@ export default function Css() {
                 <SideBar list={css} />
             </div>
             <div className='page-content'>
-
+            <TutorialsMain title={'CSS'}/>
             </div>
         </div>
     )
