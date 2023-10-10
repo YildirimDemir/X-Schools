@@ -82,7 +82,7 @@ export default function Profile({ requestUser, requestUserSet }) {
                             <h1>Images</h1>
                             <h1 onClick={() => isOpenHandler()} style={{ cursor: 'pointer' }}>❌</h1>
                         </div>
-                        <div style={{ display: "flex", justifyContent: "space-around" }}>
+                        <div className='profileImageOpen'>
                             {pp.map((item, index) => (
                                 <img className='userImage' onClick={() => handleProfileImage(item)} key={index} src={`${item}`} width="200px" height="300px" alt="" />
                             ))}
@@ -101,7 +101,7 @@ export default function Profile({ requestUser, requestUserSet }) {
                         </div>
                     </div>
                     <div className='profileContent'>
-                        <form style={{ width: "85%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }} onSubmit={handleSubmit}>
+                        <form style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }} onSubmit={handleSubmit}>
                             <div className='profileDown'>
                                 <div className="profileUsername">
                                     <label>Username</label>

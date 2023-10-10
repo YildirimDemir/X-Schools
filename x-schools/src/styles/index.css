@@ -293,7 +293,7 @@ nav .nav-content {
 /*???????????????????????????????? Sidebar-Start ???????????????????????????????????????*/
 
 .sidebar {
-    width: 200px;
+    width: 100%;
     height: 100%;
     left: 0;
     top: 80px;
@@ -328,21 +328,16 @@ nav .nav-content {
 }
 
 .page-container {
+    width: 100%;
     display: flex;
-    /* Use Flexbox */
-    min-height: 30rem;
 }
 
 .page-sidebar {
-    flex: 0 0 200px;
-    /* Make "one" 200px wide and don't allow it to grow or shrink */
+    width: 30%;
 }
 
 .page-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 70%;
 }
 
 /*???????????????????????????????? Sidebar-End ???????????????????????????????????????*/
@@ -626,7 +621,18 @@ nav .nav-content {
     margin-top: 1rem;
 }
 
-.profileEditBtn,
+.profileEditBtn {
+    background-color: var(--dark-blue);
+    color: var(--body-bg-color);
+    padding: 5px;
+    width: 50%;
+    margin-bottom: 1rem;
+    font-size: 100%;
+    border: 2px solid var(--navbar-footer-bg-color);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
 .profileSaveBtn {
     background-color: var(--dark-blue);
     color: var(--body-bg-color);
@@ -643,7 +649,7 @@ nav .nav-content {
     background-color: var(--dark-blue);
     color: var(--body-bg-color);
     padding: 5px;
-    width: 15%;
+    width: 30%;
     margin-bottom: 1rem;
     font-size: 100%;
     border: 2px solid var(--navbar-footer-bg-color);
@@ -659,7 +665,7 @@ nav .nav-content {
 }
 
 .profileContent {
-    width: 40%;
+    width: 55%;
     height: auto;
     background: rgb(77, 77, 255);
     background: linear-gradient(0deg, rgba(77, 77, 255, 1) 31%, rgba(140, 0, 255, 1) 92%);
@@ -685,7 +691,7 @@ nav .nav-content {
 }
 
 :is(.profileUsername, .profileName, .profileSurname, .profileEmail) {
-    width: 80%;
+    width: 50%;
     height: auto;
     display: flex;
     justify-content: end;
@@ -715,11 +721,16 @@ nav .nav-content {
     border-radius: 25px 0 0 25px;
     box-shadow: 0 10px 25px #9e9e9e;
     height: 30rem;
-    width: 65%;
+    width: 90%;
     overflow: auto;
     background-color: white;
     z-index: 2;
     position: absolute;
+}
+
+.profileImageOpen {
+    display: flex;
+    justify-content: space-around;
 }
 
 .profileImage-inner {
