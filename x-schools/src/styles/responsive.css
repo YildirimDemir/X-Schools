@@ -355,6 +355,11 @@
     width: 150px;
     border-left: 0;
   }
+
+  .inputs {
+    width: fit-content;
+  }
+
 }
 
 @media screen and (max-width:425px) {
@@ -385,6 +390,10 @@
 
     .profileImageDB {
         width: 85%;
+    }
+
+    .inputs {
+        padding: 2px;
     }
 
 }
