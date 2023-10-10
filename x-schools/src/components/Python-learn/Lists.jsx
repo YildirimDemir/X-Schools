@@ -5,7 +5,8 @@ import PythonData from '../../Data/PythonData';
 import Loader from '../../ui/Loader';
 
 export default function PythonLists() {
-    const {isLoading, python} = PythonData();
+
+    const { isLoading, python } = PythonData();
 
     const newPython = python.filter((item) => item.title === 'Python Lists');
 
@@ -19,27 +20,27 @@ export default function PythonLists() {
                     <Loader />
                 ) : (
                     newPython.map((item, index) => (
-                        <TemplatePage
-                        title={item.title}
-                        secondTitle="Learn Python"
-                        about={`${item.about}`}
-                        contentColor="#273469"
-                        titleColor="white"
-                        secondTitleColor="white"
-                        aboutColor="white"
-                        code={
-                        <CodeSpace
-                        title={"Python/JSX Example"}
-                        lang={"jsx"}
-                        readOnly={true}
-                        lineNumbers={true}
-                        codeWrapColor="#30343F"
-                        codeWrapBorderColor="white"
-                        titleColor="white"
-                        codeAreaColor="white"
-                        enterCode={`${item.code}`}
-                        />
-                        }
+                        <TemplatePage key={index}
+                            title={item.title}
+                            secondTitle="Learn Lists"
+                            about={`${item.about}`}
+                            contentColor="#273469"
+                            titleColor="white"
+                            secondTitleColor="white"
+                            aboutColor="white"
+                            code={
+                                <CodeSpace
+                                    title={"Python Example"}
+                                    lang={"text/x-python"}
+                                    readOnly={true}
+                                    lineNumbers={true}
+                                    codeWrapColor="#30343F"
+                                    codeWrapBorderColor="white"
+                                    titleColor="white"
+                                    codeAreaColor="white"
+                                    enterCode={`${item.code}`}
+                                />
+                            }
                         />
                     ))
                 )}

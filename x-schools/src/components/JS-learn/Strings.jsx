@@ -22,14 +22,14 @@ export default function Strings() {
                     newJavascript.map((item, index) => (
                         <TemplatePage key={index}
                             title={item.title}
-                            secondTitle="Learn JS"
+                            secondTitle="Learn Strings"
                             about={`${item.about}`}
                             contentColor="#273469"
                             titleColor="white"
                             secondTitleColor="white"
                             aboutColor="white"
                             code={<CodeSpace
-                                title={"JavaScript"}
+                                title={"JavaScript Example"}
                                 lang={"javascript"}
                                 readOnly={true}
                                 lineNumbers={true}

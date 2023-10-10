@@ -8,7 +8,7 @@ export default function Union() {
 
     const { SQL, isLoading } = SQLData();
 
-    const newSQL = SQL.filter((item) => item.title === 'SQL UNION');
+    const newSQL = SQL.filter((item) => item.title === "SQL UNION");
 
     return (
         <div className='page-container'>

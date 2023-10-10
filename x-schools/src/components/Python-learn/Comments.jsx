@@ -5,7 +5,8 @@ import Loader from '../../ui/Loader';
 import PythonData from '../../Data/PythonData';
 
 export default function PythonComments() {
-    const {isLoading, python} = PythonData();
+
+    const { isLoading, python } = PythonData();
 
     const newPython = python.filter((item) => item.title === 'Python Comments');
 
@@ -21,7 +22,7 @@ export default function PythonComments() {
                     newPython.map((item, index) => (
                         <TemplatePage key={index}
                             title={item.title}
-                            secondTitle="Learn Python"
+                            secondTitle="Learn Comments"
                             about={`${item.about}`}
                             contentColor="#273469"
                             titleColor="white"
@@ -29,8 +30,8 @@ export default function PythonComments() {
                             aboutColor="white"
                             code={
                                 <CodeSpace
-                                    title={"Python/JSX Example"}
-                                    lang={"jsx"}
+                                    title={"Python Example"}
+                                    lang={"text/x-python"}
                                     readOnly={true}
                                     lineNumbers={true}
                                     codeWrapColor="#30343F"

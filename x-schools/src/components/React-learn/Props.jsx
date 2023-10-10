@@ -22,7 +22,7 @@ export default function Props() {
                     newReact.map((item, index) => (
                         <TemplatePage key={index}
                             title={item.title}
-                            secondTitle="Learn React"
+                            secondTitle="Learn Props"
                             about={`${item.about}`}
                             contentColor="#273469"
                             titleColor="white"

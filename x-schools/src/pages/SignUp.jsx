@@ -18,6 +18,7 @@ export default function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [notMatch, setNotMatch] = useState("");
   const [notNull, setNotNull] = useState("");
+  const defaultProfileImg = "../public/user-pp/dog.jpg";
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -33,6 +34,7 @@ export default function SignUp() {
               lastname: surname,
               email: email,
               password: password,
+              profileImage: defaultProfileImg
             },
           ])
           .select();

@@ -5,6 +5,7 @@ import Loader from '../../ui/Loader';
 import CSSData from '../../Data/CSSData';
 
 export default function CssPosition() {
+  
   const { isLoading, css } = CSSData();
 
   const newCss = css.filter((item) => item.title === 'CSS Position');
@@ -21,7 +22,7 @@ export default function CssPosition() {
           newCss.map((item, index) => (
             <TemplatePage key={index}
               title={item.title}
-              secondTitle="Learn CSS"
+              secondTitle="Learn Position"
               about={`${item.about}`}
               contentColor="#273469"
               titleColor="white"
@@ -29,8 +30,8 @@ export default function CssPosition() {
               aboutColor="white"
               code={
                 <CodeSpace
-                  title={"Python/JSX Example"}
-                  lang={"jsx"}
+                  title={"CSS Example"}
+                  lang={"css"}
                   readOnly={true}
                   lineNumbers={true}
                   codeWrapColor="#30343F"

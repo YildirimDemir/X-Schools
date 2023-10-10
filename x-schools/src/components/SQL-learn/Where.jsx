@@ -8,7 +8,7 @@ export default function Where() {
 
     const { SQL, isLoading } = SQLData();
 
-    const newSQL = SQL.filter((item) => item.title === 'SQL WHERE');
+    const newSQL = SQL.filter((item) => item.title === "SQL WHERE");
 
     return (
         <div className='page-container'>
