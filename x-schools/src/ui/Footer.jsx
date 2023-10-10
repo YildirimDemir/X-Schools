@@ -7,7 +7,7 @@ export default function Footer() {
 				<UpperBar />
 				<ContentBar />
 				<LowerBar>
-					<span>Company of 2023 - CopyRight by INFINITX</span>
+					<span>Company of 2023 - CopyRight by INFINITIX</span>
 				</LowerBar>
 			</div>
 		</>
@@ -27,7 +27,7 @@ const footerContent = [
 		title: 'Contact',
 		lines: [
 			'Tel: 123123141',
-			'E-Mail: infinitx@hotmail.com',
+			'E-Mail: infinitix@gmail.com',
 			'Address: Dubai/Burj-Khalifa No.: 234',
 		]
 	},
@@ -42,9 +42,9 @@ const footerContent = [
 	{
 		title: 'Social Media',
 		lines: [
-			'Instagram: InfinitX',
-			'X: InfinitX',
-			'LinkedIn: InfinitX',
+			'Instagram: InfinitiX',
+			'X: InfinitiX',
+			'LinkedIn: InfinitiX',
 		]
 	},
 ]
@@ -57,7 +57,7 @@ function UpperBar() {
 					<h2>XSchool</h2>
 				</div>
 				<div>
-					<h2>A Company of InfinitX</h2>
+					<h2>A Company of InfinitiX</h2>
 				</div>
 			</div>
 		</>
