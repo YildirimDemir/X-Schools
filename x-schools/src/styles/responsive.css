@@ -132,6 +132,17 @@
     .about-us-content p{
         font-size: .9rem;
     }
+    .home-tutorials .home-tutorial-card {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 10px;
+        width: 90%;
+     }
+     .home-tutorial-card .home-tutorial-box {
+        width: 100%;
+     }
 }
 
 @media only screen and (max-width: 900px) {
