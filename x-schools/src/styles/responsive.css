@@ -12,17 +12,9 @@
     .nav-tutorials .nav-dropdown{
         width: 180px;
     }
-    .home-tutorials .home-tutorial-card {
-        flex-direction: column;
-        height: auto;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 10px;
-        width: 90%;
-     }
-     .home-tutorial-card .home-tutorial-box {
-        width: 100%;
-     }
+    .text-si {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 768px){
@@ -101,12 +93,24 @@
     .resp-open{
         display: block;
     }
-    .home-tutorial-box h1 {
-        font-size: 2.5rem;
+
+    .ns {
+        display: block;
     }
-    
-    .home-tutorial-box p {
-        font-size: 1rem;
+
+    .text-si {
+        display: none;
+    }
+
+    .sign {
+        height: 100%;
+        padding: 20px 0;
+    }
+
+    .tac-page {
+        width: 95%;
+        margin: 10px;
+        padding: 12px;
     }
 }@media screen and (max-width:500px) {
   .content-bar {
@@ -125,6 +129,10 @@
     margin: 0 auto;
     width: 150px;
     border-left: 0;
+  }
+  .inputs {
+    width: 100%;
+    padding: 0;
   }
 }
 
