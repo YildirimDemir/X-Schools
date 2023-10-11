@@ -138,7 +138,7 @@
         justify-content: center;
         align-items: center;
         padding: 20px 10px;
-        width: 90%;
+        width: 100%;
      }
      .home-tutorial-card .home-tutorial-box {
         width: 100%;
@@ -371,6 +371,16 @@
     width: fit-content;
   }
 
+  .home-top-content h1 {
+    font-size: 2rem;
+}
+.home-top-content .home-top-tutorials {
+    display: none;
+}
+
+.home-tutorials {
+    padding: 5px;
+}
 }
 
 @media screen and (max-width:425px) {
