@@ -932,6 +932,7 @@ nav .nav-content {
     justify-content: center;
     align-items: center;
 }
+
 .home-tutorial-box .codeWrap {
     height: 95%;
     margin: auto;
@@ -966,82 +967,10 @@ nav .nav-content {
     background-size: 200% 200%;
 }
 
-
-/* =====TUTORIALS MAIN CONTENT===== */
-
-.tutorials-main{
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg,#273469 ,#3352ca, #4e3bff);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tutorials-main h1 {
-    background: linear-gradient(135deg, #fff, #4e3bff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 4rem;
-    animation: txt-color 3s infinite ease-in-out;
-    background-size: 200% 200%;
-    text-align: center;
-}
-
-
-/* ===ABOUT US ======= */
-
-.about-us{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('/src/img/contact-bg.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 50px 20px;
-}
-
-.about-us .about-us-content{
-    width: 70%;
-    height: auto;
-    background-color: rgba(0, 0, 0, .9);
-    /* background-color: rgba(255, 255, 255, .8); */
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border: #4e3bff 3px solid;
-}
-
-.about-us-content  h1{
-    width: 100%;
-    text-align: center;
-    color: var(--pink);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.about-us-content p{
-    /* color: #000; */
-    color: #fff;
-    font-size: 1rem;
-    line-height: 2rem;
-    margin: 10px 0px;
-}
-
 /*??????????????????????????????? Home-End ?????????????????????????????????????*/
 
 /* =====CONTACT US====== */
-.contact-us{
+.contact-us {
     width: 100%;
     min-height: 100vh;
     background: url('/src/img/contact-bg.jpeg');
@@ -1055,7 +984,7 @@ nav .nav-content {
     padding: 20px;
 }
 
-.contact-us .contact-us-content{
+.contact-us .contact-us-content {
     width: 100vh;
     height: 70vh;
     background-color: rgba(255, 255, 255, .5);
@@ -1067,7 +996,7 @@ nav .nav-content {
     border: #4e3bff 3px solid;
 }
 
-.contact-us-content h1{
+.contact-us-content h1 {
     width: 100%;
     text-align: center;
     color: #4e3bff;
@@ -1076,7 +1005,7 @@ nav .nav-content {
 
 }
 
-.contact-us-content .contact-us-form{
+.contact-us-content .contact-us-form {
     width: 100%;
     height: auto;
     display: flex;
@@ -1085,13 +1014,14 @@ nav .nav-content {
     align-items: center;
 }
 
-.contact-us-form .input-box{
+.contact-us-form .input-box {
     width: 40vh;
     height: 50px;
     margin: 20px 5px;
     display: flex;
 }
-.input-box .contact-icon{
+
+.input-box .contact-icon {
     width: 10%;
     height: 100%;
     justify-content: center;
@@ -1103,7 +1033,8 @@ nav .nav-content {
     font-size: 1.3rem;
     border-radius: 5px 0px 0px 5px;
 }
-.input-box input{
+
+.input-box input {
     width: 90%;
     height: 100%;
     border: none;
@@ -1120,7 +1051,7 @@ nav .nav-content {
     border-radius: 5px;
 }
 
-.contact-us-content button{
+.contact-us-content button {
     width: 200px;
     height: 40px;
     margin: 20px auto;
@@ -1133,16 +1064,29 @@ nav .nav-content {
 
 /* =====TUTORIALS MAIN CONTENT===== */
 
-.tutorials-main{
+.tutorials-main {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg,#273469 ,#3352ca, #4e3bff);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: linear-gradient(135deg, #c2b1cf, #4e3bff, #131d42, #4d6dec);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .tutorials-main h1 {
@@ -1159,7 +1103,7 @@ nav .nav-content {
 
 /* ===ABOUT US ======= */
 
-.about-us{
+.about-us {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -1173,7 +1117,7 @@ nav .nav-content {
     padding: 50px 20px;
 }
 
-.about-us .about-us-content{
+.about-us .about-us-content {
     width: 70%;
     height: auto;
     background-color: rgba(0, 0, 0, .9);
@@ -1186,7 +1130,7 @@ nav .nav-content {
     border: #4e3bff 3px solid;
 }
 
-.about-us-content  h1{
+.about-us-content h1 {
     width: 100%;
     text-align: center;
     color: var(--pink);
@@ -1194,7 +1138,7 @@ nav .nav-content {
     margin-bottom: 20px;
 }
 
-.about-us-content p{
+.about-us-content p {
     /* color: #000; */
     color: #fff;
     font-size: 1rem;
